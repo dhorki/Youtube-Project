@@ -38,6 +38,8 @@ const StyledSliderButton = styled.button`
     height: 11px;
     width: 11px;
     margin-left: ${({ checked }) => (checked ? '17px' : '2px')};
+
+    transition: margin-left 0.3s ease;
   }
 
   > .slider-label {
