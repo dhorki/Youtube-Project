@@ -1,34 +1,9 @@
 import React, { useContext } from 'react';
 import { SliderButton } from './SliderButton';
-import styled from 'styled-components';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 import { themes } from '../../../constants/constants';
 import { useTheme } from '../../../hooks/useTheme';
-
-const StyledUserSettings = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-right: 30px;
-  justify-content: flex-end;
-
-  > .username-tag {
-    color: ${({ theme }) => theme.primary};
-    font-size: 15px;
-    font-weight: 400;
-    margin: auto;
-    margin-right: 10px;
-  }
-
-  > .user-badge {
-    background-color: red;
-    border: 1px solid ${({ theme }) => theme.inputBorder};
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    margin: auto;
-    cursor: pointer;
-  }
-`;
+import { StyledUserSettings } from '../../../styles/components/ui/header/UserSettings';
 
 export const UserSettings = () => {
   const { getTheme } = useTheme();
