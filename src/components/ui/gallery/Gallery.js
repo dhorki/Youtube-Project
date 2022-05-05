@@ -1,16 +1,7 @@
 import React from 'react';
 import { VideoCard } from './VideoCard';
-import styled from 'styled-components';
+import { StyledGallery } from '../../../styles/components/ui/gallery/Gallery';
 // import { useFetch } from '../../../hooks/useFetch';
-
-const StyledGallery = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /* justify-content: space-between; */
-  margin-top: 45px;
-  margin-left: 20px;
-`;
 
 export const Gallery = () => {
   // const { data, loading, error } = useFetch('../../../mocks/youtube-videos-mock.json');

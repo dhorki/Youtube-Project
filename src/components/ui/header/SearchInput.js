@@ -4,6 +4,7 @@ import { BsSearch } from 'react-icons/bs';
 import { useForm } from '../../../hooks/useForm';
 import { MdClear } from 'react-icons/md';
 import { useTheme } from '../../../hooks/useTheme';
+import { useHistory } from 'react-router-dom';
 
 const StyledSearchBox = styled.form`
   background-color: ${({ theme }) => theme.inputBackground};
@@ -61,8 +62,11 @@ export const SearchInput = () => {
   // TODO: initialize the form with the initial values
   const [{ q }, handleInputChange] = useForm({ q: '' });
 
+  const history = useHistory();
+
   const handleSearch = (e) => {
     e.preventDefault();
+    history.push('../../../https://www.google.com/search?q=' + q);
     console.log('Search', q);
   };
 
