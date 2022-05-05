@@ -1,7 +1,6 @@
-import { SliderButton } from './SliderButton';
 import styled from 'styled-components';
 
-const StyledUserSettings = styled.div`
+export const StyledUserSettings = styled.div`
   display: flex;
   flex-direction: row;
   padding-right: 30px;
