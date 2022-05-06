@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
-import { useTheme } from '../../../hooks/useTheme';
-import { Gallery } from './Gallery';
-import { StyledMainView } from '../../../styles/components/ui/gallery/MainView';
+import { EnvironmentContext } from '../../contexts/EnvironmentContext';
+import { useTheme } from '../../hooks/useTheme';
+import { Gallery } from './gallery/Gallery';
+import { StyledMainView } from '../../styles/components/ui/MainView';
 
-export const MainView = () => {
+export const MainView = ({ content }) => {
   const { getTheme } = useTheme();
   const theme = getTheme();
 

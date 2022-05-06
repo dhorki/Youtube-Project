@@ -15,7 +15,11 @@ export const VideoCard = ({ video }) => {
   const d = new Date(publishTime);
 
   return (
-    <StyledVideoCard theme={theme} to={`/${videoId}`}>
+    <StyledVideoCard
+      className="animate__animated animate__fadeIn"
+      theme={theme}
+      to={`/${videoId}`}
+    >
       <img src={url} alt="video" />
       <div className="videocard-title">{decodeHtml(title)}</div>
       <div className="videocard-channel-title">

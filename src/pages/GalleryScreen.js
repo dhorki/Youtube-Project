@@ -1,15 +1,16 @@
 import React from 'react';
+import { MainView } from '../components/ui/MainView';
 import { Header } from '../components/ui/header/Header';
 import { Sidebar } from '../components/ui/sidebar/Sidebar';
 import { StyledContainer, StyledMain } from '../styles/pages/Common';
 
-export const FavoritesScreen = () => {
+export const GalleryScreen = () => {
   return (
     <StyledContainer>
       <Header />
       <StyledMain>
         <Sidebar />
-        <h1>Favorites</h1>
+        <MainView />
       </StyledMain>
     </StyledContainer>
   );

@@ -15,17 +15,17 @@ export const useFetch = (url) => {
       setLoading(true);
       if (cache.current[url]) {
         const result = cache.current[url];
-        // console.log("fetching from cache " + url);
+        // console.log('fetching from cache ' + url);
         setData(result);
       } else {
         try {
-          // console.log("fetching");
+          console.log('fetching');
           const response = await fetch(url, { signal: controller.signal });
           const result = await response.json();
           cache.current[url] = result; // set response in cache;
           setData(result);
         } catch (e) {
-          console.log(e);
+          // console.log(e);
           setError(e);
         }
       } //else

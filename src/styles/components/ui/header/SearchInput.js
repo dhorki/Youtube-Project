@@ -17,7 +17,7 @@ export const StyledSearchBox = styled.form`
     background-color: transparent;
     padding: 0.5rem;
     padding-right: 0.2rem;
-    width: ${({ q }) => (q.length === 0 ? 380 : 350)}px;
+    width: ${({ q }) => (q?.length === 0 ? 380 : 350)}px;
 
     &:focus {
       outline: none;

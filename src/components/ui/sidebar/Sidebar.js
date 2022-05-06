@@ -10,13 +10,18 @@ export const Sidebar = () => {
   const { getTheme } = useTheme();
   const theme = getTheme();
 
-  const { sidebarShow } = useContext(EnvironmentContext);
+  const { sidebarShow, handleSearchChange } = useContext(EnvironmentContext);
+
+  const resetSearch = () => {
+    handleSearchChange({ target: { name: 'q', value: '' } });
+  };
 
   return (
     <StyledSidebar theme={theme} toggle={sidebarShow}>
       <NavLink
         className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
         to="/"
+        onClick={resetSearch}
         exact
       >
         <AiFillHome className="sidebar-link-icon" />
@@ -25,6 +30,7 @@ export const Sidebar = () => {
       <NavLink
         className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
         to="/favorites"
+        onClick={resetSearch}
       >
         <MdFavorite className="sidebar-link-icon" />
         <span>Favorites</span>
