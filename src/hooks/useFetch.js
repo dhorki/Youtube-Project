@@ -19,7 +19,7 @@ export const useFetch = (url) => {
         setData(result);
       } else {
         try {
-          console.log('fetching');
+          // console.log('fetching');
           const response = await fetch(url, { signal: controller.signal });
           const result = await response.json();
           cache.current[url] = result; // set response in cache;

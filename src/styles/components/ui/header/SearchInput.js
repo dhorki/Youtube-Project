@@ -19,6 +19,10 @@ export const StyledSearchBox = styled.form`
     padding-right: 0.2rem;
     width: ${({ q }) => (q?.length === 0 ? 380 : 350)}px;
 
+    @media only screen and (max-width: 675px) {
+      width: ${({ q }) => (q?.length === 0 ? 230 : 220)}px;
+    }
+
     &:focus {
       outline: none;
     }

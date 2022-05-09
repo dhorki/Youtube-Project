@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  min-width: 560px;
   z-index: 1;
 
   transition: background-color ${styles.props.transitionTime} ease;
@@ -51,6 +52,10 @@ export const StyledHeader = styled.header`
       font-size: 18px;
       font-weight: bolder;
       margin: 0 5px;
+
+      @media only screen and (max-width: 830px) {
+        display: none;
+      }
     }
   }
 `;
