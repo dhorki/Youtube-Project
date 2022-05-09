@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useTheme } from '../../../hooks/useTheme';
 import { timeSince } from '../../../helpers/formatters';
 import { decodeHtml } from '../../../helpers/decodeHtml';
@@ -14,7 +15,11 @@ export const RelatedVideoCard = ({ video }) => {
   const { url } = thumbnails.medium;
   const d = new Date(publishTime);
 
-  const fixedTitle = title.length > 80 ? title.slice(0, 80) + '...' : title;
+  const upperCaseCharsCount = title.length - title.replace(/[^A-Z]/gi, '').length;
+  const limitLength = upperCaseCharsCount > 20 ? 70 : 80;
+
+  const fixedTitle =
+    title.length > limitLength ? title.slice(0, limitLength) + '...' : title;
 
   return (
     <StyledRelatedVideoCard
@@ -33,4 +38,8 @@ export const RelatedVideoCard = ({ video }) => {
       </div>
     </StyledRelatedVideoCard>
   );
+};
+
+RelatedVideoCard.propTypes = {
+  video: PropTypes.object.isRequired,
 };

@@ -6,4 +6,6 @@ export const StyledGallery = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
+
+  color: ${({ theme }) => theme.primary};
 `;

@@ -24,21 +24,23 @@ export const AppRouter = () => {
       <div>
         <Switch>
           <Route path="/auth" component={AuthRouter} />
-          <StyledContainer>
-            <Header />
-            <StyledMain>
-              <Sidebar />
-              <StyledMainView theme={theme} sidebarShow={sidebarShow}>
-                <div className="main-container">
-                  <Route exact path="/favorites" component={GalleryScreen} />
-                  <Route path="/:videoId" component={ViewVideoScreen} />
-                  <Route exact path="/" component={GalleryScreen} />
-                  {/* <Redirect to="/auth/login" /> */}
-                </div>
-              </StyledMainView>
-            </StyledMain>
-          </StyledContainer>
         </Switch>
+        <StyledContainer>
+          <Header />
+          <StyledMain>
+            <Sidebar />
+            <StyledMainView theme={theme} sidebarShow={sidebarShow}>
+              <div className="main-container">
+                <Switch>
+                  <Route exact path="/" component={GalleryScreen} />
+                  <Route exact path="/favorites" component={GalleryScreen} />
+                  <Route exact path="/:videoId" component={ViewVideoScreen} />
+                  {/* <Redirect to="/auth/login" /> */}
+                </Switch>
+              </div>
+            </StyledMainView>
+          </StyledMain>
+        </StyledContainer>
       </div>
     </Router>
   );

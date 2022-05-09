@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const cache = { current: {} };
 
-export const useFetch = (url) => {
+export const useFetch = (url, cacheIt = true) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,7 +13,8 @@ export const useFetch = (url) => {
 
     const fetchData = async () => {
       setLoading(true);
-      if (cache.current[url]) {
+      const cachedResult = cache.current[url];
+      if (cachedResult && !cachedResult.error) {
         const result = cache.current[url];
         // console.log('fetching from cache ' + url);
         setData(result);
@@ -22,7 +23,12 @@ export const useFetch = (url) => {
           // console.log('fetching');
           const response = await fetch(url, { signal: controller.signal });
           const result = await response.json();
-          cache.current[url] = result; // set response in cache;
+          if (result.error) {
+            setError(result.error);
+          }
+          if (cacheIt) {
+            cache.current[url] = result; // set response in cache;
+          }
           setData(result);
         } catch (e) {
           // console.log(e);
@@ -36,7 +42,7 @@ export const useFetch = (url) => {
     return () => {
       controller.abort();
     };
-  }, [url]);
+  }, [url, cacheIt]);
 
   return {
     data,

@@ -5,6 +5,7 @@ import { useFetch } from '../../../hooks/useFetch';
 import { RelatedVideoCard } from './RelatedVideoCard';
 import { LoadingAnimation } from '../loading/LoadingAnimation';
 import { useTheme } from '../../../hooks/useTheme';
+import { ErrorText } from '../error/ErrorText';
 
 export const RelatedVideoList = ({ relatedTo }) => {
   const { getTheme } = useTheme();
@@ -35,7 +36,7 @@ export const RelatedVideoList = ({ relatedTo }) => {
       {loading ? (
         <LoadingAnimation />
       ) : error ? (
-        <p>Error: {error?.message}</p>
+        <ErrorText error={error} />
       ) : !filteredItems || filteredItems.length === 0 ? (
         'No Related videos.'
       ) : (

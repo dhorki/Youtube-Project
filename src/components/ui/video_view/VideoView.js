@@ -14,7 +14,7 @@ import { useTheme } from '../../../hooks/useTheme';
 import { StyledVideoView } from '../../../styles/components/ui/video_view/VideoView';
 import { LoadingAnimation } from '../loading/LoadingAnimation';
 import { ChannelBadge } from './ChannelBadge';
-import { RelatedVideoList } from './RelatedVideoList';
+import { ErrorText } from '../error/ErrorText';
 
 export const VideoView = ({ id }) => {
   const { getTheme } = useTheme();
@@ -40,9 +40,11 @@ export const VideoView = ({ id }) => {
   }
 
   return (
-    <StyledVideoView theme={theme}>
+    <StyledVideoView className="animate__animated animate__fadeIn" theme={theme}>
       {loading ? (
         <LoadingAnimation />
+      ) : error ? (
+        <ErrorText error={error} />
       ) : (
         <>
           <div className="embedded-video">
@@ -96,6 +98,6 @@ export const VideoView = ({ id }) => {
   );
 };
 
-RelatedVideoList.propTypes = {
+VideoView.propTypes = {
   id: PropTypes.string.isRequired,
 };

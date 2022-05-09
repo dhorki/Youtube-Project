@@ -18,7 +18,9 @@ export const ChannelBadge = ({ id }) => {
 
   const { data, loading, error } = useFetch(url);
 
-  let image, title, subscriberCount;
+  let image = '',
+    title = '',
+    subscriberCount = '';
   if (!loading && !error) {
     const item = data?.items[0];
     image = item.snippet.thumbnails.default.url;

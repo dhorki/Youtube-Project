@@ -2,11 +2,16 @@ import React from 'react';
 import { VideoCard } from '../components/ui/gallery/VideoCard';
 import { StyledGallery } from '../styles/pages/Gallery';
 import { useFetch } from '../hooks/useFetch';
+import { useTheme } from '../hooks/useTheme';
 import { useLocation } from 'react-router-dom';
 import { mainViewTypes } from '../constants/constants';
 import { LoadingAnimation } from '../components/ui/loading/LoadingAnimation';
+import { ErrorText } from '../components/ui/error/ErrorText';
 
 export const GalleryScreen = () => {
+  const { getTheme } = useTheme();
+  const theme = getTheme();
+
   const location = useLocation();
 
   const galleryType =
@@ -39,7 +44,7 @@ export const GalleryScreen = () => {
     url = favoritesUrl;
   }
 
-  const { data, loading, error } = useFetch(url);
+  const { data, loading, error } = useFetch(url, false);
   // const { data, loading, error } = { data: [], loading: true, error: null };
 
   let filteredItems = [];
@@ -49,19 +54,24 @@ export const GalleryScreen = () => {
   }
 
   const getNoResultsMessage = () => {
+    let message = '';
     if (galleryType === mainViewTypes.searchGallery) {
-      return q ? <p>No results found for your search.</p> : null;
+      q && (message = 'No results found for your search.');
     } else {
-      return <p>You have no favorites yet.</p>;
+      message = 'You have no favorites yet';
     }
+
+    return message ? (
+      <p className="animate__animated animate__fadeIn">{message}</p>
+    ) : null;
   };
 
   return (
-    <StyledGallery>
+    <StyledGallery theme={theme}>
       {loading ? (
         <LoadingAnimation />
       ) : error ? (
-        <p>Error: {error?.message}</p>
+        <ErrorText error={error} />
       ) : !filteredItems || filteredItems.length === 0 ? (
         getNoResultsMessage()
       ) : (

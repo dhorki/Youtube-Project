@@ -1,17 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { MdClear } from 'react-icons/md';
 import { useTheme } from '../../../hooks/useTheme';
 import { useHistory } from 'react-router-dom';
 import { StyledSearchBox } from '../../../styles/components/ui/header/SearchInput';
-import { useLocation } from 'react-router-dom';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const SearchInput = () => {
-  const location = useLocation();
-  const queryString = require('query-string');
-  const { q: query = '' } = queryString.parse(location.search);
-
   const { q, handleSearchChange } = useContext(EnvironmentContext);
 
   const { getTheme } = useTheme();
@@ -23,10 +18,6 @@ export const SearchInput = () => {
     e.preventDefault();
     history.push(q?.length > 0 ? '/?q=' + q : '/');
   };
-
-  useEffect(() => {
-    handleSearchChange({ target: { name: 'q', value: query } });
-  }, [query, handleSearchChange]);
 
   const handleClear = (e) => {
     e.preventDefault();
