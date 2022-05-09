@@ -26,7 +26,7 @@ export const SearchInput = () => {
 
   useEffect(() => {
     handleSearchChange({ target: { name: 'q', value: query } });
-  }, [query]);
+  }, [query, handleSearchChange]);
 
   const handleClear = (e) => {
     e.preventDefault();
