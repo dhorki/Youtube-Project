@@ -8,8 +8,6 @@ export const RelatedVideoCard = ({ video }) => {
   const { getTheme } = useTheme();
   const theme = getTheme();
 
-  console.log(video);
-
   const { id, snippet } = video;
   const { videoId } = id;
   const { title, channelTitle, thumbnails, publishTime } = snippet;
