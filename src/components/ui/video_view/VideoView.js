@@ -34,7 +34,6 @@ export const VideoView = ({ id }) => {
   // const { items } = require('../../../mocks/youtube-video-mock.json');
   let snippet, contentDetails, statistics;
   if (!loading && !error) {
-    console.log(data);
     const item = data?.items[0];
     snippet = item.snippet;
     contentDetails = item.contentDetails;
