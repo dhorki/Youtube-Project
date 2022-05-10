@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { RiLiveLine } from 'react-icons/ri';
 import { FaThumbsUp } from 'react-icons/fa';
 import { IoTimerOutline } from 'react-icons/io5';
 import {
@@ -33,6 +34,7 @@ export const VideoView = ({ id }) => {
   // const { items } = require('../../../mocks/youtube-video-mock.json');
   let snippet, contentDetails, statistics;
   if (!loading && !error) {
+    console.log(data);
     const item = data?.items[0];
     snippet = item.snippet;
     contentDetails = item.contentDetails;
@@ -67,7 +69,12 @@ export const VideoView = ({ id }) => {
                 <FaThumbsUp /> {intToMagnitude(statistics.likeCount)}
               </span>{' '}
               <span>
-                <IoTimerOutline /> {youtubeDurationToTime(contentDetails.duration)}
+                <IoTimerOutline />{' '}
+                {snippet.liveBroadcastContent === 'live' ? (
+                  <RiLiveLine className="live-icon" />
+                ) : (
+                  youtubeDurationToTime(contentDetails.duration)
+                )}
               </span>
             </p>
           </div>

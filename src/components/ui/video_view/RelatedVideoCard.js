@@ -15,8 +15,8 @@ export const RelatedVideoCard = ({ video }) => {
   const { url } = thumbnails.medium;
   const d = new Date(publishTime);
 
-  const upperCaseCharsCount = title.length - title.replace(/[^A-Z]/gi, '').length;
-  const limitLength = upperCaseCharsCount > 20 ? 70 : 80;
+  const upperCaseCharsCount = title.length - title.replace(/[A-Z]/gi, '').length;
+  const limitLength = upperCaseCharsCount > 50 ? 50 : upperCaseCharsCount > 30 ? 60 : 70;
 
   const fixedTitle =
     title.length > limitLength ? title.slice(0, limitLength) + '...' : title;

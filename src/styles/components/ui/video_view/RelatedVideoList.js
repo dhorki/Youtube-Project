@@ -19,9 +19,4 @@ export const StyledRelatedVideoList = styled.div`
     width: 100%;
     text-align: center;
   }
-
-  > a {
-    margin-left: 15px;
-    margin-bottom: 15px;
-  }
 `;

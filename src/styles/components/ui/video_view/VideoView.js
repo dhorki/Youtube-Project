@@ -35,7 +35,6 @@ export const StyledVideoView = styled.div`
     padding: 0;
     text-align: left;
     width: 100%;
-    max-width: ${videoArea};
     min-width: 480px;
   }
 
@@ -49,7 +48,6 @@ export const StyledVideoView = styled.div`
     margin: 0px;
     text-align: left;
     width: 100%;
-    max-width: ${videoArea};
     min-width: 480px;
 
     > p {
@@ -57,6 +55,10 @@ export const StyledVideoView = styled.div`
     }
     > .view-video-stats-right {
       font-size: 15px;
+
+      .live-icon {
+        color: ${({ theme }) => theme.appIcon};
+      }
     }
   }
 

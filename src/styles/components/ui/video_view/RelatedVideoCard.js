@@ -7,8 +7,8 @@ export const StyledRelatedVideoCard = styled(Link)`
   flex-direction: row;
   width: 360px;
 
-  margin: 10px;
-  margin-bottom: 40px;
+  margin-left: 5px;
+  margin-bottom: 10px;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
@@ -24,6 +24,7 @@ export const StyledRelatedVideoCard = styled(Link)`
     display: flex;
     flex-direction: column;
     width: 226px;
+    margin-left: 10px;
 
     > .videocard-title {
       color: ${({ theme }) => theme.primary};
