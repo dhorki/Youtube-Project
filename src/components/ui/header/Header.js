@@ -13,7 +13,12 @@ export const Header = () => {
   const { getTheme } = useTheme();
   const theme = getTheme();
 
-  const { sidebarShow, setSidebarShow } = useContext(EnvironmentContext);
+  const { sidebarShow, setSidebarShow, handleSearchChange } =
+    useContext(EnvironmentContext);
+
+  const resetSearch = () => {
+    handleSearchChange({ target: { name: 'q', value: '' } });
+  };
 
   return (
     <StyledHeader theme={theme}>
@@ -24,7 +29,7 @@ export const Header = () => {
       >
         {sidebarShow ? <BsFillArrowLeftSquareFill /> : <GiHamburgerMenu />}
       </button>
-      <Link className="app-link" to="/">
+      <Link className="app-link" to="/" onClick={resetSearch}>
         <div className="app-icon">
           <IoLogoYoutube />
         </div>
