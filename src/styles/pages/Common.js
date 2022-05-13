@@ -10,4 +10,5 @@ export const StyledMain = styled.main`
   display: flex;
   flex-direction: row;
   margin-top: 45px;
+  min-width: 560px;
 `;

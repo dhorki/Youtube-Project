@@ -35,3 +35,9 @@ export const styles = {
     sidebarWidth: '150px',
   },
 };
+
+export const mainViewTypes = {
+  searchGallery: 'searchGallery',
+  favoritesGallery: 'favoritesGallery',
+  videoDetails: 'videoDetails',
+};

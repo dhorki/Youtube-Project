@@ -5,5 +5,7 @@ export const StyledGallery = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 45px;
+  margin-top: 40px;
+
+  color: ${({ theme }) => theme.primary};
 `;
