@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { StyledChannelBadge } from '../../../styles/components/ui/video_view/ChannelBadge';
 import { useFetch } from '../../../hooks/useFetch';
-import { useTheme } from '../../../hooks/useTheme';
 import { intToMagnitude } from '../../../helpers/formatters';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const ChannelBadge = ({ id }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const url =
     'https://www.googleapis.com/youtube/v3/channels?' +

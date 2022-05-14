@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { styles } from '../../../constants/constants';
+import { screenSizes, styles } from '../../../constants/constants';
 
 export const StyledMainView = styled.div`
   background-color: ${({ theme }) => theme.background};
@@ -21,5 +21,9 @@ export const StyledMainView = styled.div`
 
     transition: margin-left ${styles.props.transitionTime} ease;
     transition: width ${styles.props.transitionTime * 2} ease;
+
+    @media only screen and (max-width: ${screenSizes.small}) {
+      margin-left: 0px;
+    }
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { RiLiveLine } from 'react-icons/ri';
 import { FaThumbsUp } from 'react-icons/fa';
 import { IoTimerOutline } from 'react-icons/io5';
@@ -10,16 +10,16 @@ import {
 } from '../../../helpers/formatters';
 import PropTypes from 'prop-types';
 import { useFetchYoutubeVideos } from '../../../hooks/useFetchYoutubeVideos';
-import { useTheme } from '../../../hooks/useTheme';
 
 import { StyledVideoView } from '../../../styles/components/ui/video_view/VideoView';
 import { LoadingAnimation } from '../loading/LoadingAnimation';
 import { ChannelBadge } from './ChannelBadge';
 import { ErrorText } from '../error/ErrorText';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const VideoView = ({ id }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const { data, loading, error } = useFetchYoutubeVideos(
     process.env.REACT_APP_YOUTUBE_API_KEY,

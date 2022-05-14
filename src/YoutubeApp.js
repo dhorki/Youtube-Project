@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { EnvironmentContext } from './contexts/EnvironmentContext';
-import { useForm } from './hooks/useForm';
 import { AppRouter } from './routers/AppRouter';
-import { themes } from './constants/constants';
+import { styles } from './constants/constants';
+import { appReducer } from './reducers/appReducer';
 
 export const YoutubeApp = () => {
-  const [theme, setTheme] = useState(themes.light);
-  const [sidebarShow, setSidebarShow] = useState(false);
-  const [{ q }, handleSearchChange] = useForm({ q: '' });
+  const init = {
+    theme: styles.colors.light,
+    sidebarShow: false,
+    q: '',
+  };
+
+  const [environment, dispatchEnv] = useReducer(appReducer, init);
+
   return (
-    <EnvironmentContext.Provider
-      value={{ theme, setTheme, sidebarShow, setSidebarShow, q, handleSearchChange }}
-    >
+    <EnvironmentContext.Provider value={{ environment, dispatchEnv }}>
       <AppRouter />
     </EnvironmentContext.Provider>
   );

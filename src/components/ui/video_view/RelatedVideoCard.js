@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../../hooks/useTheme';
 import { timeSince } from '../../../helpers/formatters';
 import { decodeHtml } from '../../../helpers/decodeHtml';
 import { StyledRelatedVideoCard } from '../../../styles/components/ui/video_view/RelatedVideoCard';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const RelatedVideoCard = ({ video }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const { id, snippet } = video;
   const { videoId } = id;

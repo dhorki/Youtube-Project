@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { styles } from '../../../../constants/constants';
+import { screenSizes, styles } from '../../../../constants/constants';
 
 export const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.barBackground};
@@ -36,6 +36,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 5px;
 
     > .app-icon {
       font-size: 20px;
@@ -44,7 +45,6 @@ export const StyledHeader = styled.header`
       flex-direction: row;
       justify-content: center;
       padding: 0;
-      margin: auto;
     }
 
     > h1 {
@@ -53,7 +53,7 @@ export const StyledHeader = styled.header`
       font-weight: bolder;
       margin: 0 5px;
 
-      @media only screen and (max-width: 830px) {
+      @media only screen and (max-width: ${screenSizes.small}) {
         display: none;
       }
     }

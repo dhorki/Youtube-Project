@@ -6,7 +6,6 @@ import { Header } from '../components/ui/header/Header';
 import { StyledContainer, StyledMain } from '../styles/pages/Common';
 import { Sidebar } from '../components/ui/sidebar/Sidebar';
 import { StyledMainView } from '../styles/components/ui/MainView';
-import { useTheme } from '../hooks/useTheme';
 import { EnvironmentContext } from '../contexts/EnvironmentContext';
 import { GalleryScreen } from '../pages/GalleryScreen';
 import { ViewVideoScreen } from '../pages/ViewVideoScreen';
@@ -14,10 +13,8 @@ import { ViewVideoScreen } from '../pages/ViewVideoScreen';
 const history = createBrowserHistory();
 
 export const AppRouter = () => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
-
-  const { sidebarShow } = useContext(EnvironmentContext);
+  const { environment } = useContext(EnvironmentContext);
+  const { theme, sidebarShow } = environment;
 
   return (
     <Router history={history}>

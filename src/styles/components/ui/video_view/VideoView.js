@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { styles } from '../../../../constants/constants';
+import { screenSizes, styles } from '../../../../constants/constants';
 
 const videoArea = '60vw';
 const videoAreaSmall = '100vw';
@@ -8,7 +8,7 @@ export const StyledVideoView = styled.div`
   max-width: ${videoArea};
   min-width: 480px;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: ${screenSizes.mid}) {
     max-width: ${videoAreaSmall};
   }
 
@@ -17,7 +17,7 @@ export const StyledVideoView = styled.div`
     min-height: calc(480px * 9 / 16);
     height: calc(${videoArea} * 9 / 16);
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: ${screenSizes.mid}) {
       height: calc(${videoAreaSmall} * 9 / 16);
     }
 

@@ -1,27 +1,21 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTheme } from '../../../hooks/useTheme';
 import { AiFillHome } from 'react-icons/ai';
 import { MdFavorite } from 'react-icons/md';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 import { StyledSidebar } from '../../../styles/components/ui/sidebar/Sidebar';
+import { resetSearch } from '../../../helpers/resetSearch';
 
 export const Sidebar = () => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
-
-  const { sidebarShow, handleSearchChange } = useContext(EnvironmentContext);
-
-  const resetSearch = () => {
-    handleSearchChange({ target: { name: 'q', value: '' } });
-  };
+  const { environment, dispatchEnv } = useContext(EnvironmentContext);
+  const { theme, sidebarShow } = environment;
 
   return (
     <StyledSidebar theme={theme} toggle={sidebarShow}>
       <NavLink
         className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
         to="/"
-        onClick={resetSearch}
+        onClick={() => resetSearch(dispatchEnv)}
         exact
       >
         <AiFillHome className="sidebar-link-icon" />
@@ -30,7 +24,7 @@ export const Sidebar = () => {
       <NavLink
         className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
         to="/favorites"
-        onClick={resetSearch}
+        onClick={() => resetSearch(dispatchEnv)}
       >
         <MdFavorite className="sidebar-link-icon" />
         <span>Favorites</span>

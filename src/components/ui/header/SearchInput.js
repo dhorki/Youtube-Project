@@ -1,27 +1,34 @@
 import React, { useContext } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { MdClear } from 'react-icons/md';
-import { useTheme } from '../../../hooks/useTheme';
 import { useHistory } from 'react-router-dom';
 import { StyledSearchBox } from '../../../styles/components/ui/header/SearchInput';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
+import { environmentActions } from '../../../constants/constants';
+import { resetSearch } from '../../../helpers/resetSearch';
 
 export const SearchInput = () => {
-  const { q, handleSearchChange } = useContext(EnvironmentContext);
-
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment, dispatchEnv } = useContext(EnvironmentContext);
+  const { theme, q } = environment;
 
   const history = useHistory();
+
+  const handleSearchChange = (e) => {
+    const { name, value } = e.target;
+
+    const action = {
+      type: environmentActions.setSearchQuery,
+      payload: {
+        [name]: value,
+      },
+    };
+
+    dispatchEnv(action);
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(q?.length > 0 ? '/?q=' + q : '/');
-  };
-
-  const handleClear = (e) => {
-    e.preventDefault();
-    handleSearchChange({ target: { name: 'q', value: '' } });
   };
 
   return (
@@ -35,7 +42,11 @@ export const SearchInput = () => {
         name="q"
         theme={theme}
       />
-      <button className="clear-button" type="button" onClick={handleClear}>
+      <button
+        className="clear-button"
+        type="button"
+        onClick={() => resetSearch(dispatchEnv)}
+      >
         <MdClear />
       </button>
 

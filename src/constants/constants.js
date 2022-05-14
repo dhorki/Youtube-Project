@@ -1,8 +1,3 @@
-export const themes = {
-  light: 'light',
-  dark: 'dark',
-};
-
 export const styles = {
   colors: {
     light: {
@@ -36,8 +31,20 @@ export const styles = {
   },
 };
 
+export const screenSizes = {
+  xsmall: '775px',
+  small: '830px',
+  mid: '1200px',
+};
+
 export const mainViewTypes = {
   searchGallery: 'searchGallery',
   favoritesGallery: 'favoritesGallery',
   videoDetails: 'videoDetails',
+};
+
+export const environmentActions = {
+  setTheme: 'setTheme',
+  setSidebarShow: 'setSidebarShow',
+  setSearchQuery: 'setSearchQuery',
 };

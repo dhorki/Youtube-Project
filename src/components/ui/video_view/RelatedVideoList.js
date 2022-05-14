@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { StyledRelatedVideoList } from '../../../styles/components/ui/video_view/RelatedVideoList';
 import { useFetch } from '../../../hooks/useFetch';
 import { RelatedVideoCard } from './RelatedVideoCard';
 import { LoadingAnimation } from '../loading/LoadingAnimation';
-import { useTheme } from '../../../hooks/useTheme';
 import { ErrorText } from '../error/ErrorText';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const RelatedVideoList = ({ relatedTo }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
+
   const url =
     'https://www.googleapis.com/youtube/v3/search?' +
     `key=${process.env.REACT_APP_YOUTUBE_API_KEY}&` +

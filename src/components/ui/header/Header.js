@@ -5,31 +5,32 @@ import { IoLogoYoutube } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../../hooks/useTheme';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 import { StyledHeader } from '../../../styles/components/ui/header/Header';
+import { environmentActions } from '../../../constants/constants';
+import { resetSearch } from '../../../helpers/resetSearch';
 
 export const Header = () => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment, dispatchEnv } = useContext(EnvironmentContext);
+  const { theme, sidebarShow } = environment;
 
-  const { sidebarShow, setSidebarShow, handleSearchChange } =
-    useContext(EnvironmentContext);
+  const sidebarShowHandler = () => {
+    const action = {
+      type: environmentActions.setSidebarShow,
+      payload: {
+        sidebarShow: !sidebarShow,
+      },
+    };
 
-  const resetSearch = () => {
-    handleSearchChange({ target: { name: 'q', value: '' } });
+    dispatchEnv(action);
   };
 
   return (
     <StyledHeader theme={theme}>
-      <button
-        onClick={() => {
-          setSidebarShow(!sidebarShow);
-        }}
-      >
+      <button onClick={sidebarShowHandler}>
         {sidebarShow ? <BsFillArrowLeftSquareFill /> : <GiHamburgerMenu />}
       </button>
-      <Link className="app-link" to="/" onClick={resetSearch}>
+      <Link className="app-link" to="/" onClick={() => resetSearch(dispatchEnv)}>
         <div className="app-icon">
           <IoLogoYoutube />
         </div>

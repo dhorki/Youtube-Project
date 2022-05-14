@@ -1,12 +1,12 @@
-import React from 'react';
-import { useTheme } from '../../../hooks/useTheme';
+import React, { useContext } from 'react';
 import { timeSince } from '../../../helpers/formatters';
 import { decodeHtml } from '../../../helpers/decodeHtml';
 import { StyledVideoCard } from '../../../styles/components/ui/gallery/VideoCard';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const VideoCard = ({ video }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const { id, snippet } = video;
   const { videoId } = id;
