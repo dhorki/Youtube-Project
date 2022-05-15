@@ -13,6 +13,7 @@ export const Sidebar = () => {
   return (
     <StyledSidebar theme={theme} toggle={sidebarShow}>
       <NavLink
+        id="sidebar-home-link"
         className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
         to="/"
         onClick={() => resetSearch(dispatchEnv)}
@@ -22,6 +23,7 @@ export const Sidebar = () => {
         <span>Home</span>
       </NavLink>
       <NavLink
+        id="sidebar-favorites-link"
         className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
         to="/favorites"
         onClick={() => resetSearch(dispatchEnv)}

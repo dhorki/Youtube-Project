@@ -61,9 +61,7 @@ export const GalleryScreen = () => {
       message = 'You have no favorites yet';
     }
 
-    return message ? (
-      <p className="animate__animated animate__fadeIn">{message}</p>
-    ) : null;
+    return <p className="animate__animated animate__fadeIn">{message}</p>;
   };
 
   return (

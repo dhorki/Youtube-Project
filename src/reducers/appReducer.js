@@ -7,7 +7,6 @@ export const appReducer = (state, { type, payload }) => {
     case environmentActions.setSidebarShow:
       return { ...state, sidebarShow: payload.sidebarShow };
     case environmentActions.setSearchQuery:
-      console.log({ payload });
       return { ...state, q: payload.q };
     default:
       return state;

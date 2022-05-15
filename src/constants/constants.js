@@ -32,7 +32,7 @@ export const styles = {
 };
 
 export const screenSizes = {
-  xsmall: '775px',
+  xsmall: '675px',
   small: '830px',
   mid: '1200px',
 };

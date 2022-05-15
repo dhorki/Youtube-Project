@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserSettings should render correctly 1`] = `
+<div
+  className="sc-gsnTZi kemrEt"
+>
+  <button
+    checked={false}
+    className="sc-bczRLJ dqlSGE"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <div
+      className="slider-background"
+    >
+      <div
+        className="slider"
+      />
+    </div>
+    <div
+      className="slider-label"
+    >
+      Dark Mode
+    </div>
+  </button>
+  <div
+    className="username-tag"
+  >
+    Victor Infante
+  </div>
+  <img
+    alt="Victor Infante"
+    className="user-badge"
+    src="https://cdn.pixabay.com/photo/2016/11/08/15/21/user-1808597_1280.png"
+  />
+</div>
+`;

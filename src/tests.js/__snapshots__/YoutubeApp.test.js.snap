@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YoutubeApp should render correctly 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dispatchEnv": [Function],
+      "environment": Object {
+        "q": "",
+        "sidebarShow": false,
+        "theme": Object {
+          "appIcon": "#ff0200",
+          "background": "#F9F9F9",
+          "barBackground": "#ffffff",
+          "inputBackground": "#ffffff",
+          "inputBorder": "#cccccc",
+          "linkActive": "#ff0200",
+          "linkHoverBackground": "#ececec",
+          "primary": "#030303",
+          "searchButtonBackground": "#f8f8f8",
+          "secondary": "#606060",
+        },
+      },
+    }
+  }
+>
+  <AppRouter />
+</ContextProvider>
+`;

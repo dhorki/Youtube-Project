@@ -30,8 +30,8 @@ export const timeSince = (date, detailCount = 2) => {
     count--;
   }
   interval = (seconds % 60) / 60;
-  if (interval > 1 && count > 0) {
-    message += ' ' + Math.floor(interval) + ' seconds';
+  if (interval > 0 && count > 0) {
+    message += ' ' + Math.ceil(interval) + ' seconds';
     count--;
   }
 
@@ -73,15 +73,25 @@ export const youtubeDurationToTime = (duration) => {
     const matches = reptms.exec(duration);
     if (matches[1]) {
       hours = Number(matches[1]);
-      timeString += `${hours}:`;
+      if (hours > 0) {
+        timeString += `${hours}:`;
+      }
     }
     if (matches[2]) {
       minutes = Number(matches[2]);
-      timeString += `${minutes}:`;
+      if (minutes < 10 && hours > 0) {
+        timeString += `0${minutes}:`;
+      } else if (minutes === 0 && hours === 0) {
+        timeString += '0:';
+      } else {
+        timeString += `${minutes}:`;
+      }
+    } else {
+      timeString += '0:';
     }
     if (matches[3]) {
       seconds = Number(matches[3]);
-      timeString += `${seconds}`;
+      timeString += `${seconds < 10 ? '0' + seconds : seconds}`;
     }
   }
   return timeString;

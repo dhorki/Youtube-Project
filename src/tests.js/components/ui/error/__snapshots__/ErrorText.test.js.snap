@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorText should render correctly 1`] = `
+<p
+  className="animate__animated animate__fadeIn"
+>
+  Error: 
+  Error message
+</p>
+`;

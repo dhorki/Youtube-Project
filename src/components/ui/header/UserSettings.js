@@ -19,8 +19,6 @@ export const UserSettings = () => {
     dispatchEnv(action);
   };
 
-  const handleLogout = () => {};
-
   const user = { name: 'Victor Infante' };
 
   return (
@@ -33,7 +31,6 @@ export const UserSettings = () => {
       <div className="username-tag">{user.name}</div>
       <img
         className="user-badge"
-        onClick={handleLogout}
         alt={user.name}
         src={'https://cdn.pixabay.com/photo/2016/11/08/15/21/user-1808597_1280.png'}
       />

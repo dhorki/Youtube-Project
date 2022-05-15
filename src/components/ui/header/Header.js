@@ -27,7 +27,7 @@ export const Header = () => {
 
   return (
     <StyledHeader theme={theme}>
-      <button onClick={sidebarShowHandler}>
+      <button id="sidebarToggler" onClick={sidebarShowHandler}>
         {sidebarShow ? <BsFillArrowLeftSquareFill /> : <GiHamburgerMenu />}
       </button>
       <Link className="app-link" to="/" onClick={() => resetSearch(dispatchEnv)}>
