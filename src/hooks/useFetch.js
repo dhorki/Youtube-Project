@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 const cache = { current: {} };
 
 export const useFetch = (url, cacheIt = true) => {
-  const _isMounted = useRef(true); // Initial value _isMounted = true
+  // const _isMounted = useRef(true); // Initial value _isMounted = true
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,19 +33,21 @@ export const useFetch = (url, cacheIt = true) => {
           setData(result);
         } catch (e) {
           // console.log(e);
-          if (_isMounted.current) {
-            setError(e);
-          }
+          // if (_isMounted.current) {
+          //   setError(e);
+          // }
+          setError(e);
         }
-      } //else
-      if (_isMounted.current) {
-        setLoading(false);
       }
+      // if (_isMounted.current) {
+      //   setLoading(false);
+      // }
+      setLoading(false);
     };
     fetchData();
 
     return () => {
-      _isMounted.current = false;
+      // _isMounted.current = false;
       controller.abort();
     };
   }, [url, cacheIt]);
