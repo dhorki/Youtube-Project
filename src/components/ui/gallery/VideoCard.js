@@ -3,6 +3,7 @@ import { timeSince } from '../../../helpers/formatters';
 import { decodeHtml } from '../../../helpers/decodeHtml';
 import { StyledVideoCard } from '../../../styles/components/ui/gallery/VideoCard';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
+import PropTypes from 'prop-types';
 
 export const VideoCard = ({ video }) => {
   const { environment } = useContext(EnvironmentContext);
@@ -28,4 +29,8 @@ export const VideoCard = ({ video }) => {
       <div className="videocard-description">{decodeHtml(description)}</div>
     </StyledVideoCard>
   );
+};
+
+const VideoCard.propTypes = {
+  video: PropTypes.object.isRequired,
 };
