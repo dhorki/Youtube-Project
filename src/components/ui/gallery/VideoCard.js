@@ -31,6 +31,6 @@ export const VideoCard = ({ video }) => {
   );
 };
 
-const VideoCard.propTypes = {
+VideoCard.propTypes = {
   video: PropTypes.object.isRequired,
 };
