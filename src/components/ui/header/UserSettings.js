@@ -1,20 +1,23 @@
 import React, { useContext } from 'react';
 import { SliderButton } from './SliderButton';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
-import { themes } from '../../../constants/constants';
-import { useTheme } from '../../../hooks/useTheme';
+import { environmentActions, styles } from '../../../constants/constants';
 import { StyledUserSettings } from '../../../styles/components/ui/header/UserSettings';
 
 export const UserSettings = () => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
-  const { theme: curTheme, setTheme } = useContext(EnvironmentContext);
+  const { environment, dispatchEnv } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const handleThemeChange = (checked) => {
-    setTheme(checked ? themes.dark : themes.light);
-  };
+    const action = {
+      type: environmentActions.setTheme,
+      payload: {
+        theme: checked ? styles.colors.dark : styles.colors.light,
+      },
+    };
 
-  const handleLogout = () => {};
+    dispatchEnv(action);
+  };
 
   const user = { name: 'Victor Infante' };
 
@@ -22,13 +25,12 @@ export const UserSettings = () => {
     <StyledUserSettings theme={theme}>
       <SliderButton
         label="Dark Mode"
-        initState={curTheme === themes.dark}
+        initState={theme === styles.colors.dark}
         callback={handleThemeChange}
       />
       <div className="username-tag">{user.name}</div>
       <img
         className="user-badge"
-        onClick={handleLogout}
         alt={user.name}
         src={'https://cdn.pixabay.com/photo/2016/11/08/15/21/user-1808597_1280.png'}
       />

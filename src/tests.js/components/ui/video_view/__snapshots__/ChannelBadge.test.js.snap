@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChannelBadge should render correctly while loading 1`] = `
+<div
+  className="sc-bczRLJ ciwsDi"
+/>
+`;
+
+exports[`ChannelBadge should render correctly with fail fetch 1`] = `
+<div
+  className="sc-bczRLJ ciwsDi"
+>
+  <div
+    className="badge"
+  >
+    <div>
+      <p
+        className="title"
+      >
+        #?
+      </p>
+      <p
+        className="subscribers"
+      >
+        0
+         subscribers
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChannelBadge should render correctly with success fetch 1`] = `
+<div
+  className="sc-bczRLJ ciwsDi"
+>
+  <div
+    className="badge"
+  >
+    <img
+      alt="channel title"
+      src="https://www.youtube.com/channel/channelId/default.jpg"
+    />
+    <div>
+      <p
+        className="title"
+      >
+        channel title
+      </p>
+      <p
+        className="subscribers"
+      >
+        12.3K
+         subscribers
+      </p>
+    </div>
+  </div>
+</div>
+`;

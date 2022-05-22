@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { StyledChannelBadge } from '../../../styles/components/ui/video_view/ChannelBadge';
 import { useFetch } from '../../../hooks/useFetch';
-import { useTheme } from '../../../hooks/useTheme';
 import { intToMagnitude } from '../../../helpers/formatters';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const ChannelBadge = ({ id }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const url =
     'https://www.googleapis.com/youtube/v3/channels?' +
@@ -19,8 +19,8 @@ export const ChannelBadge = ({ id }) => {
   const { data, loading, error } = useFetch(url);
 
   let image = '',
-    title = '',
-    subscriberCount = '';
+    title = '#?',
+    subscriberCount = 0;
   if (!loading && !error) {
     const item = data?.items[0];
     image = item.snippet.thumbnails.default.url;
@@ -32,7 +32,7 @@ export const ChannelBadge = ({ id }) => {
     <StyledChannelBadge theme={theme}>
       {loading ? null : (
         <div className="badge">
-          <img src={image} alt={title} />
+          {!error ? <img src={image} alt={title} /> : null}
           <div>
             <p className="title">{title}</p>
             <p className="subscribers">{intToMagnitude(subscriberCount)} subscribers</p>

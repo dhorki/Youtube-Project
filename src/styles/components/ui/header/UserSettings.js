@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledUserSettings = styled.div`
   display: flex;
   flex-direction: row;
+  margin-left: 5px;
   padding-right: 30px;
   justify-content: flex-end;
 

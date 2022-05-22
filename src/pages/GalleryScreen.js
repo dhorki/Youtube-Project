@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { VideoCard } from '../components/ui/gallery/VideoCard';
 import { StyledGallery } from '../styles/pages/Gallery';
 import { useFetch } from '../hooks/useFetch';
-import { useTheme } from '../hooks/useTheme';
 import { useLocation } from 'react-router-dom';
 import { mainViewTypes } from '../constants/constants';
 import { LoadingAnimation } from '../components/ui/loading/LoadingAnimation';
 import { ErrorText } from '../components/ui/error/ErrorText';
+import { EnvironmentContext } from '../contexts/EnvironmentContext';
 
 export const GalleryScreen = () => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const location = useLocation();
 
@@ -61,9 +61,7 @@ export const GalleryScreen = () => {
       message = 'You have no favorites yet';
     }
 
-    return message ? (
-      <p className="animate__animated animate__fadeIn">{message}</p>
-    ) : null;
+    return <p className="animate__animated animate__fadeIn">{message}</p>;
   };
 
   return (

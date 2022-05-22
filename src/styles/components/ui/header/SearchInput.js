@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { screenSizes } from '../../../../constants/constants';
 
 export const StyledSearchBox = styled.form`
   background-color: ${({ theme }) => theme.inputBackground};
@@ -19,7 +20,7 @@ export const StyledSearchBox = styled.form`
     padding-right: 0.2rem;
     width: ${({ q }) => (q?.length === 0 ? 380 : 350)}px;
 
-    @media only screen and (max-width: 675px) {
+    @media only screen and (max-width: ${screenSizes.xsmall}) {
       width: ${({ q }) => (q?.length === 0 ? 230 : 220)}px;
     }
 

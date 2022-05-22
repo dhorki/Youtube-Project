@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { screenSizes } from '../../../../constants/constants';
 
 export const StyledRelatedVideoList = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const StyledRelatedVideoList = styled.div`
   align-items: center;
   width: 390px;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: ${screenSizes.mid}) {
     width: 100%;
     flex-direction: row;
     align-items: top;

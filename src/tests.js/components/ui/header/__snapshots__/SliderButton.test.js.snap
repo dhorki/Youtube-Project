@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SliderButton should render correctly with label 1`] = `
+<button
+  checked={true}
+  className="sc-bczRLJ ewAQIF"
+  onClick={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+>
+  <div
+    className="slider-background"
+  >
+    <div
+      className="slider"
+    />
+  </div>
+  <div
+    className="slider-label"
+  >
+    slider label
+  </div>
+</button>
+`;
+
+exports[`SliderButton should render correctly without label 1`] = `
+<button
+  checked={true}
+  className="sc-bczRLJ ewAQIF"
+  onClick={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+>
+  <div
+    className="slider-background"
+  >
+    <div
+      className="slider"
+    />
+  </div>
+</button>
+`;

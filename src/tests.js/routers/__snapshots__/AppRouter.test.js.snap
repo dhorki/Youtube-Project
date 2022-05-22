@@ -1,0 +1,841 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppReducer should render Video View route 1`] = `
+<div>
+  <div
+    className="sc-eCYdqJ eTrRnv"
+  >
+    <header
+      className="sc-hKMtZM hjNxSb"
+    >
+      <button
+        id="sidebarToggler"
+        onClick={[Function]}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+            key="0"
+          />
+        </svg>
+      </button>
+      <a
+        className="app-link"
+        href="/"
+        onClick={[Function]}
+      >
+        <div
+          className="app-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M508.64 148.79c0-45-33.1-81.2-74-81.2C379.24 65 322.74 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.59-.06 220.19 0 255.79q-.15 53.4 3.4 106.9c0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8q91.2.3 178.6-3.8c40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107q.34-53.4-3.26-106.9zM207 353.89v-196.5l145 98.2z"
+              key="0"
+            />
+          </svg>
+        </div>
+        <h1>
+          Llutuve
+        </h1>
+      </a>
+      <form
+        className="sc-bczRLJ byqFuz"
+      >
+        <input
+          autoComplete="off"
+          name="q"
+          onChange={[Function]}
+          placeholder="Search"
+          theme={
+            Object {
+              "appIcon": "#ff0200",
+              "background": "#F9F9F9",
+              "barBackground": "#ffffff",
+              "inputBackground": "#ffffff",
+              "inputBorder": "#cccccc",
+              "linkActive": "#ff0200",
+              "linkHoverBackground": "#ececec",
+              "primary": "#030303",
+              "searchButtonBackground": "#f8f8f8",
+              "secondary": "#606060",
+            }
+          }
+          type="text"
+          value=""
+        />
+        <button
+          className="clear-button"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              key="1"
+            />
+          </svg>
+        </button>
+        <button
+          className="search-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              key="0"
+            />
+          </svg>
+        </button>
+      </form>
+      <div
+        className="sc-dkzDqf cbTxFK"
+      >
+        <button
+          checked={false}
+          className="sc-gsnTZi iizJZa"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        >
+          <div
+            className="slider-background"
+          >
+            <div
+              className="slider"
+            />
+          </div>
+          <div
+            className="slider-label"
+          >
+            Dark Mode
+          </div>
+        </button>
+        <div
+          className="username-tag"
+        >
+          Victor Infante
+        </div>
+        <img
+          alt="Victor Infante"
+          className="user-badge"
+          src="https://cdn.pixabay.com/photo/2016/11/08/15/21/user-1808597_1280.png"
+        />
+      </div>
+    </header>
+    <main
+      className="sc-jSMfEi lnEsir"
+    >
+      <nav
+        className="sc-gKXOVf kZGaan"
+      >
+        <a
+          aria-current="page"
+          className="sidebar-link sidebar-link-active active"
+          href="/"
+          id="sidebar-home-link"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <svg
+            className="sidebar-link-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 1024 1024"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z"
+              key="0"
+            />
+          </svg>
+          <span>
+            Home
+          </span>
+        </a>
+        <a
+          aria-current={null}
+          className="sidebar-link "
+          href="/favorites"
+          id="sidebar-favorites-link"
+          onClick={[Function]}
+        >
+          <svg
+            className="sidebar-link-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              key="1"
+            />
+          </svg>
+          <span>
+            Favorites
+          </span>
+        </a>
+      </nav>
+      <div
+        className="sc-iBkjds hEUcW"
+      >
+        <div
+          className="main-container"
+        >
+          <div
+            className="sc-papXJ ahnaX"
+          >
+            <div
+              className="sc-jqUVSM jvuTyc"
+            >
+              <img
+                alt="loading"
+                src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`AppReducer should render default/search route 1`] = `
+<div>
+  <div
+    className="sc-eCYdqJ eTrRnv"
+  >
+    <header
+      className="sc-hKMtZM hjNxSb"
+    >
+      <button
+        id="sidebarToggler"
+        onClick={[Function]}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+            key="0"
+          />
+        </svg>
+      </button>
+      <a
+        className="app-link"
+        href="/"
+        onClick={[Function]}
+      >
+        <div
+          className="app-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M508.64 148.79c0-45-33.1-81.2-74-81.2C379.24 65 322.74 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.59-.06 220.19 0 255.79q-.15 53.4 3.4 106.9c0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8q91.2.3 178.6-3.8c40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107q.34-53.4-3.26-106.9zM207 353.89v-196.5l145 98.2z"
+              key="0"
+            />
+          </svg>
+        </div>
+        <h1>
+          Llutuve
+        </h1>
+      </a>
+      <form
+        className="sc-bczRLJ byqFuz"
+      >
+        <input
+          autoComplete="off"
+          name="q"
+          onChange={[Function]}
+          placeholder="Search"
+          theme={
+            Object {
+              "appIcon": "#ff0200",
+              "background": "#F9F9F9",
+              "barBackground": "#ffffff",
+              "inputBackground": "#ffffff",
+              "inputBorder": "#cccccc",
+              "linkActive": "#ff0200",
+              "linkHoverBackground": "#ececec",
+              "primary": "#030303",
+              "searchButtonBackground": "#f8f8f8",
+              "secondary": "#606060",
+            }
+          }
+          type="text"
+          value=""
+        />
+        <button
+          className="clear-button"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              key="1"
+            />
+          </svg>
+        </button>
+        <button
+          className="search-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              key="0"
+            />
+          </svg>
+        </button>
+      </form>
+      <div
+        className="sc-dkzDqf cbTxFK"
+      >
+        <button
+          checked={false}
+          className="sc-gsnTZi iizJZa"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        >
+          <div
+            className="slider-background"
+          >
+            <div
+              className="slider"
+            />
+          </div>
+          <div
+            className="slider-label"
+          >
+            Dark Mode
+          </div>
+        </button>
+        <div
+          className="username-tag"
+        >
+          Victor Infante
+        </div>
+        <img
+          alt="Victor Infante"
+          className="user-badge"
+          src="https://cdn.pixabay.com/photo/2016/11/08/15/21/user-1808597_1280.png"
+        />
+      </div>
+    </header>
+    <main
+      className="sc-jSMfEi lnEsir"
+    >
+      <nav
+        className="sc-gKXOVf kZGaan"
+      >
+        <a
+          aria-current="page"
+          className="sidebar-link sidebar-link-active active"
+          href="/"
+          id="sidebar-home-link"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <svg
+            className="sidebar-link-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 1024 1024"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z"
+              key="0"
+            />
+          </svg>
+          <span>
+            Home
+          </span>
+        </a>
+        <a
+          aria-current={null}
+          className="sidebar-link "
+          href="/favorites"
+          id="sidebar-favorites-link"
+          onClick={[Function]}
+        >
+          <svg
+            className="sidebar-link-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              key="1"
+            />
+          </svg>
+          <span>
+            Favorites
+          </span>
+        </a>
+      </nav>
+      <div
+        className="sc-iBkjds hEUcW"
+      >
+        <div
+          className="main-container"
+        >
+          <div
+            className="sc-papXJ ahnaX"
+          >
+            <div
+              className="sc-jqUVSM jvuTyc"
+            >
+              <img
+                alt="loading"
+                src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`AppReducer should render favorites route 1`] = `
+<div>
+  <div
+    className="sc-eCYdqJ eTrRnv"
+  >
+    <header
+      className="sc-hKMtZM hjNxSb"
+    >
+      <button
+        id="sidebarToggler"
+        onClick={[Function]}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+            key="0"
+          />
+        </svg>
+      </button>
+      <a
+        className="app-link"
+        href="/"
+        onClick={[Function]}
+      >
+        <div
+          className="app-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M508.64 148.79c0-45-33.1-81.2-74-81.2C379.24 65 322.74 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.59-.06 220.19 0 255.79q-.15 53.4 3.4 106.9c0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8q91.2.3 178.6-3.8c40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107q.34-53.4-3.26-106.9zM207 353.89v-196.5l145 98.2z"
+              key="0"
+            />
+          </svg>
+        </div>
+        <h1>
+          Llutuve
+        </h1>
+      </a>
+      <form
+        className="sc-bczRLJ byqFuz"
+      >
+        <input
+          autoComplete="off"
+          name="q"
+          onChange={[Function]}
+          placeholder="Search"
+          theme={
+            Object {
+              "appIcon": "#ff0200",
+              "background": "#F9F9F9",
+              "barBackground": "#ffffff",
+              "inputBackground": "#ffffff",
+              "inputBorder": "#cccccc",
+              "linkActive": "#ff0200",
+              "linkHoverBackground": "#ececec",
+              "primary": "#030303",
+              "searchButtonBackground": "#f8f8f8",
+              "secondary": "#606060",
+            }
+          }
+          type="text"
+          value=""
+        />
+        <button
+          className="clear-button"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              key="1"
+            />
+          </svg>
+        </button>
+        <button
+          className="search-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              key="0"
+            />
+          </svg>
+        </button>
+      </form>
+      <div
+        className="sc-dkzDqf cbTxFK"
+      >
+        <button
+          checked={false}
+          className="sc-gsnTZi iizJZa"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        >
+          <div
+            className="slider-background"
+          >
+            <div
+              className="slider"
+            />
+          </div>
+          <div
+            className="slider-label"
+          >
+            Dark Mode
+          </div>
+        </button>
+        <div
+          className="username-tag"
+        >
+          Victor Infante
+        </div>
+        <img
+          alt="Victor Infante"
+          className="user-badge"
+          src="https://cdn.pixabay.com/photo/2016/11/08/15/21/user-1808597_1280.png"
+        />
+      </div>
+    </header>
+    <main
+      className="sc-jSMfEi lnEsir"
+    >
+      <nav
+        className="sc-gKXOVf kZGaan"
+      >
+        <a
+          aria-current="page"
+          className="sidebar-link sidebar-link-active active"
+          href="/"
+          id="sidebar-home-link"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <svg
+            className="sidebar-link-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 1024 1024"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z"
+              key="0"
+            />
+          </svg>
+          <span>
+            Home
+          </span>
+        </a>
+        <a
+          aria-current={null}
+          className="sidebar-link "
+          href="/favorites"
+          id="sidebar-favorites-link"
+          onClick={[Function]}
+        >
+          <svg
+            className="sidebar-link-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              key="1"
+            />
+          </svg>
+          <span>
+            Favorites
+          </span>
+        </a>
+      </nav>
+      <div
+        className="sc-iBkjds hEUcW"
+      >
+        <div
+          className="main-container"
+        >
+          <div
+            className="sc-papXJ ahnaX"
+          >
+            <div
+              className="sc-jqUVSM jvuTyc"
+            >
+              <img
+                alt="loading"
+                src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;

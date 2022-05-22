@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../../hooks/useTheme';
 import { timeSince } from '../../../helpers/formatters';
 import { decodeHtml } from '../../../helpers/decodeHtml';
 import { StyledRelatedVideoCard } from '../../../styles/components/ui/video_view/RelatedVideoCard';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const RelatedVideoCard = ({ video }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const { id, snippet } = video;
   const { videoId } = id;
@@ -15,11 +15,11 @@ export const RelatedVideoCard = ({ video }) => {
   const { url } = thumbnails.medium;
   const d = new Date(publishTime);
 
-  const upperCaseCharsCount = title.length - title.replace(/[A-Z]/gi, '').length;
+  const upperCaseCharsCount = title.length - title.replaceAll(/[A-Z]/g, '').length;
   const limitLength = upperCaseCharsCount > 50 ? 50 : upperCaseCharsCount > 30 ? 60 : 70;
 
   const fixedTitle =
-    title.length > limitLength ? title.slice(0, limitLength) + '...' : title;
+    title.length >= limitLength ? title.slice(0, limitLength) + '...' : title;
 
   return (
     <StyledRelatedVideoCard

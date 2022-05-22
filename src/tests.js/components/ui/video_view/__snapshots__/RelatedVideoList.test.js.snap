@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedVideoList should render correctly while loading 1`] = `
+<div
+  className="sc-bczRLJ cSUjCY"
+>
+  <h3>
+    Related Videos
+  </h3>
+  <div
+    className="sc-gsnTZi gEmEgX"
+  >
+    <img
+      alt="loading"
+      src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+    />
+  </div>
+</div>
+`;
+
+exports[`RelatedVideoList should render correctly with fail fetch 1`] = `
+<div
+  className="sc-bczRLJ cSUjCY"
+>
+  <h3>
+    Related Videos
+  </h3>
+  <p
+    className="animate__animated animate__fadeIn"
+  >
+    Error: 
+    undefined
+  </p>
+</div>
+`;
+
+exports[`RelatedVideoList should render correctly with no related videos 1`] = `
+<div
+  className="sc-bczRLJ cSUjCY"
+>
+  <h3>
+    Related Videos
+  </h3>
+  No Related videos.
+</div>
+`;
+
+exports[`RelatedVideoList should render correctly with success fetch 1`] = `
+<div
+  className="sc-bczRLJ cSUjCY"
+>
+  <h3>
+    Related Videos
+  </h3>
+  <div>
+    RelatedVideoCard 
+    videoId1
+  </div>
+  <div>
+    RelatedVideoCard 
+    videoId2
+  </div>
+  <div>
+    RelatedVideoCard 
+    videoId3
+  </div>
+</div>
+`;
+
+exports[`RelatedVideoList should render correctly with success fetch 2`] = `
+<div
+  className="sc-bczRLJ cSUjCY"
+>
+  <h3>
+    Related Videos
+  </h3>
+  <div>
+    RelatedVideoCard 
+    videoId1
+  </div>
+  <div>
+    RelatedVideoCard 
+    videoId2
+  </div>
+  <div>
+    RelatedVideoCard 
+    videoId3
+  </div>
+</div>
+`;

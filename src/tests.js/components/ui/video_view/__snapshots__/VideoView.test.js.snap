@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoView should render correctly while loading 1`] = `
+<div
+  className="sc-bczRLJ ieozwB animate__animated animate__fadeIn"
+>
+  <div
+    className="sc-gsnTZi gEmEgX"
+  >
+    <img
+      alt="loading"
+      src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+    />
+  </div>
+</div>
+`;
+
+exports[`VideoView should render correctly with fail fetch 1`] = `
+<div
+  className="sc-bczRLJ ieozwB animate__animated animate__fadeIn"
+>
+  <p
+    className="animate__animated animate__fadeIn"
+  >
+    Error: 
+    undefined
+  </p>
+</div>
+`;
+
+exports[`VideoView should render correctly with success fetch and NOT live broadcast 1`] = `
+<div
+  className="sc-bczRLJ ieozwB animate__animated animate__fadeIn"
+>
+  <div
+    className="embedded-video"
+  >
+    <iframe
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen="allowfullscreen"
+      frameBorder="0"
+      src="//www.youtube.com/embed/videoId"
+      title="videoId"
+    />
+  </div>
+  <p
+    className="view-video-title"
+  >
+    video title
+  </p>
+  <div
+    className="view-video-stats"
+  >
+    <p
+      className="view-video-stats-left"
+    >
+      <span>
+        100
+      </span>
+       views -
+       
+      <span>
+        Dec 31, 19
+      </span>
+    </p>
+    <p
+      className="view-video-stats-right"
+    >
+      <span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"
+            key="0"
+          />
+        </svg>
+         
+        10
+      </span>
+       
+      <span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M112.91 128A191.85 191.85 0 0064 254c-1.18 106.35 85.65 193.8 192 194 106.2.2 192-85.83 192-192 0-104.54-83.55-189.61-187.5-192a4.36 4.36 0 00-4.5 4.37V152"
+            fill="none"
+            key="0"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="32"
+          />
+          <path
+            d="M233.38 278.63l-79-113a8.13 8.13 0 0111.32-11.32l113 79a32.5 32.5 0 01-37.25 53.26 33.21 33.21 0 01-8.07-7.94z"
+            key="1"
+          />
+        </svg>
+         
+        1:30
+      </span>
+    </p>
+  </div>
+  <hr />
+  <div
+    className="view-video-channel-favorite"
+  >
+    <div
+      className="sc-dkzDqf iVzNIT"
+    />
+    <button>
+      ADD TO FAVORITES
+    </button>
+  </div>
+  <div
+    className="view-video-description-box"
+  >
+    <p
+      className="view-video-description collapsed"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "video description",
+        }
+      }
+    />
+    <button
+      className="view-video-description-toggle"
+      onClick={[Function]}
+    >
+      SHOW 
+      MORE
+    </button>
+  </div>
+</div>
+`;
+
+exports[`VideoView should render correctly with success fetch and live broadcast 1`] = `
+<div
+  className="sc-bczRLJ ieozwB animate__animated animate__fadeIn"
+>
+  <div
+    className="embedded-video"
+  >
+    <iframe
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen="allowfullscreen"
+      frameBorder="0"
+      src="//www.youtube.com/embed/videoId"
+      title="videoId"
+    />
+  </div>
+  <p
+    className="view-video-title"
+  >
+    video title
+  </p>
+  <div
+    className="view-video-stats"
+  >
+    <p
+      className="view-video-stats-left"
+    >
+      <span>
+        100
+      </span>
+       views -
+       
+      <span>
+        Dec 31, 19
+      </span>
+    </p>
+    <p
+      className="view-video-stats-right"
+    >
+      <span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"
+            key="0"
+          />
+        </svg>
+         
+        10
+      </span>
+       
+      <span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M112.91 128A191.85 191.85 0 0064 254c-1.18 106.35 85.65 193.8 192 194 106.2.2 192-85.83 192-192 0-104.54-83.55-189.61-187.5-192a4.36 4.36 0 00-4.5 4.37V152"
+            fill="none"
+            key="0"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="32"
+          />
+          <path
+            d="M233.38 278.63l-79-113a8.13 8.13 0 0111.32-11.32l113 79a32.5 32.5 0 01-37.25 53.26 33.21 33.21 0 01-8.07-7.94z"
+            key="1"
+          />
+        </svg>
+         
+        <svg
+          className="live-icon"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            key="0"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+              key="0"
+            />
+            <path
+              d="M16 4a1 1 0 0 1 1 1v4.2l5.213-3.65a.5.5 0 0 1 .787.41v12.08a.5.5 0 0 1-.787.41L17 14.8V19a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14zm-1 2H3v12h12V6zM7.4 8.829a.4.4 0 0 1 .215.062l4.355 2.772a.4.4 0 0 1 0 .674L7.615 15.11A.4.4 0 0 1 7 14.77V9.23c0-.221.18-.4.4-.4zM21 8.84l-4 2.8v.718l4 2.8V8.84z"
+              fillRule="nonzero"
+              key="1"
+            />
+          </g>
+        </svg>
+      </span>
+    </p>
+  </div>
+  <hr />
+  <div
+    className="view-video-channel-favorite"
+  >
+    <div
+      className="sc-dkzDqf iVzNIT"
+    />
+    <button>
+      ADD TO FAVORITES
+    </button>
+  </div>
+  <div
+    className="view-video-description-box"
+  >
+    <p
+      className="view-video-description collapsed"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "video description",
+        }
+      }
+    />
+    <button
+      className="view-video-description-toggle"
+      onClick={[Function]}
+    >
+      SHOW 
+      MORE
+    </button>
+  </div>
+</div>
+`;

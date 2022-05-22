@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GalleryScreen should render correctly while loading 1`] = `
+<div
+  className="sc-bczRLJ ljydhb"
+>
+  <div
+    className="sc-gsnTZi gEmEgX"
+  >
+    <img
+      alt="loading"
+      src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+    />
+  </div>
+</div>
+`;
+
+exports[`GalleryScreen should render correctly with fail fetch 1`] = `
+<div
+  className="sc-bczRLJ ljydhb"
+>
+  <p
+    className="animate__animated animate__fadeIn"
+  >
+    Error: 
+    undefined
+  </p>
+</div>
+`;
+
+exports[`GalleryScreen should render correctly with success fetch as favorites 1`] = `
+<div
+  className="sc-bczRLJ ljydhb"
+>
+  <div>
+    VideoCard 
+    videoId1
+  </div>
+  <div>
+    VideoCard 
+    videoId2
+  </div>
+  <div>
+    VideoCard 
+    videoId3
+  </div>
+</div>
+`;
+
+exports[`GalleryScreen should render correctly with success fetch as favorites with no results 1`] = `
+<div
+  className="sc-bczRLJ ljydhb"
+>
+  <p
+    className="animate__animated animate__fadeIn"
+  >
+    You have no favorites yet
+  </p>
+</div>
+`;
+
+exports[`GalleryScreen should render correctly with success fetch as search 1`] = `
+<div
+  className="sc-bczRLJ ljydhb"
+>
+  <div>
+    VideoCard 
+    videoId1
+  </div>
+  <div>
+    VideoCard 
+    videoId2
+  </div>
+  <div>
+    VideoCard 
+    videoId3
+  </div>
+</div>
+`;
+
+exports[`GalleryScreen should render correctly with success fetch as search with no results 1`] = `
+<div
+  className="sc-bczRLJ ljydhb"
+>
+  <p
+    className="animate__animated animate__fadeIn"
+  >
+    No results found for your search.
+  </p>
+</div>
+`;

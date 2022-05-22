@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingAnimation should render correctly 1`] = `
+<div
+  className="sc-bczRLJ ihClzx"
+>
+  <img
+    alt="loading"
+    src="https://i.pinimg.com/originals/d4/2b/b2/d42bb2f00e1042c990b25f90ada9b0ab.gif"
+  />
+</div>
+`;

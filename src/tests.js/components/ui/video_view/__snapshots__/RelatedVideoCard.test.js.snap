@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedVideoCard should render correctly 1`] = `
+<a
+  className="sc-bczRLJ jnCrbq animate__animated animate__fadeIn"
+  href="/undefined"
+  onClick={[Function]}
+  theme={
+    Object {
+      "appIcon": "#ff0200",
+      "background": "#F9F9F9",
+      "barBackground": "#ffffff",
+      "inputBackground": "#ffffff",
+      "inputBorder": "#cccccc",
+      "linkActive": "#ff0200",
+      "linkHoverBackground": "#ececec",
+      "primary": "#030303",
+      "searchButtonBackground": "#f8f8f8",
+      "secondary": "#606060",
+    }
+  }
+>
+  <img
+    alt="video"
+    src="https://www.youtube.com/watch?v=videoId"
+  />
+  <div>
+    <div
+      className="videocard-title"
+    >
+      Video title
+    </div>
+    <div
+      className="videocard-channel-title"
+    >
+      Channel title
+      <br />
+      10 days 10 hours
+       ago.
+    </div>
+  </div>
+</a>
+`;

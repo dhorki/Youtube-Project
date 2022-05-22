@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../../hooks/useTheme';
 import { StyledSliderButton } from '../../../styles/components/ui/header/SliderButton';
+import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const SliderButton = ({ label, initState, callback }) => {
-  const { getTheme } = useTheme();
-  const theme = getTheme();
+  const { environment } = useContext(EnvironmentContext);
+  const { theme } = environment;
 
   const [hover, setHover] = useState(false);
   const [checked, setChecked] = useState(initState);

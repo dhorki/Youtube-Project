@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoViewScreen should render correctly 1`] = `
+<div
+  className="sc-bczRLJ dhxzA-D"
+>
+  <div>
+    VideoView 
+    mockVideoId
+  </div>
+  <div>
+    RelatedVideoList 
+    mockVideoId
+  </div>
+</div>
+`;

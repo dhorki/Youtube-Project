@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useFetch } from './useFetch';
 
 export const useFetchYoutubeVideos = (key, idList) => {
@@ -15,4 +16,9 @@ export const useFetchYoutubeVideos = (key, idList) => {
     loading,
     error,
   };
+};
+
+useFetchYoutubeVideos.propTypes = {
+  key: PropTypes.string.isRequired,
+  idList: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
