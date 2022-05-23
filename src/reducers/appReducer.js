@@ -8,6 +8,10 @@ export const appReducer = (state, { type, payload }) => {
       return { ...state, sidebarShow: payload.sidebarShow };
     case environmentActions.setSearchQuery:
       return { ...state, q: payload.q };
+    case environmentActions.setModalShow:
+      return { ...state, modalShow: payload.modalShow };
+    case environmentActions.setUser:
+      return { ...state, user: payload.user };
     default:
       return state;
   }

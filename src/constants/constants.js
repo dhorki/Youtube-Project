@@ -11,6 +11,10 @@ export const styles = {
       inputBackground: '#ffffff',
       inputBorder: '#cccccc',
       searchButtonBackground: '#f8f8f8',
+      // google button
+      white: '#fff',
+      googleBlue: '#4285f4',
+      buttonActiveBlue: '#1669f2',
     },
     dark: {
       appIcon: '#ff0200',
@@ -23,6 +27,10 @@ export const styles = {
       inputBackground: '#121212',
       inputBorder: '#303030',
       searchButtonBackground: '#323232',
+      // google button
+      white: '#fff',
+      googleBlue: '#4285f4',
+      buttonActiveBlue: '#1669f2',
     },
   },
   props: {
@@ -47,4 +55,26 @@ export const environmentActions = {
   setTheme: 'setTheme',
   setSidebarShow: 'setSidebarShow',
   setSearchQuery: 'setSearchQuery',
+  setModalShow: 'setModalShow',
+  setUser: 'setUser',
+};
+
+export const modalTypes = {
+  login: 'login',
+  register: 'register',
+  none: 'none',
+};
+
+export const resetSearchQueryAction = {
+  type: environmentActions.setSearchQuery,
+  payload: {
+    q: '',
+  },
+};
+
+export const hideModalAction = {
+  type: environmentActions.setModalShow,
+  payload: {
+    modalShow: modalTypes.none,
+  },
 };

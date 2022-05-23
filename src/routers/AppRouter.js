@@ -9,12 +9,14 @@ import { StyledMainView } from '../styles/components/ui/MainView';
 import { EnvironmentContext } from '../contexts/EnvironmentContext';
 import { GalleryScreen } from '../pages/GalleryScreen';
 import { ViewVideoScreen } from '../pages/ViewVideoScreen';
+import { modalTypes } from '../constants/constants';
+import { Modal } from '../components/ui/modal/Modal';
 
 const history = createBrowserHistory();
 
 export const AppRouter = () => {
   const { environment } = useContext(EnvironmentContext);
-  const { theme, sidebarShow } = environment;
+  const { theme, sidebarShow, modalShow } = environment;
 
   return (
     <Router history={history}>
@@ -38,6 +40,7 @@ export const AppRouter = () => {
             </StyledMainView>
           </StyledMain>
         </StyledContainer>
+        {modalTypes.none !== modalShow && <Modal />}
       </div>
     </Router>
   );

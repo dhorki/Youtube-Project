@@ -1,15 +1,8 @@
 import PropTypes from 'prop-types';
-import { environmentActions } from '../constants/constants';
+import { resetSearchQueryAction } from '../constants/constants';
 
 export const resetSearch = (dispatch) => {
-  const action = {
-    type: environmentActions.setSearchQuery,
-    payload: {
-      q: '',
-    },
-  };
-
-  dispatch(action);
+  dispatch(resetSearchQueryAction);
 };
 
 resetSearch.propTypes = {
