@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { styles } from '../../constants/constants';
 
-export const StyledRegisterModal = styled.div`
+export const StyledAuthModal = styled.div`
   background-color: ${({ theme }) => theme.barBackground};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2px;
@@ -50,6 +50,7 @@ export const StyledRegisterModal = styled.div`
 
     > button {
       font-size: 16px;
+      margin: 5px 0px;
       padding: 5px;
       color: ${({ theme }) => theme.primary};
       background-color: ${({ theme }) => theme.searchButtonBackground};

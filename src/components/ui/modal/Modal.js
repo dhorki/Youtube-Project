@@ -5,6 +5,7 @@ import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 import { StyledModal } from '../../../styles/components/ui/modal/Modal';
 import { LoginModal } from '../../auth/LoginModal';
 import { RegisterModal } from '../../auth/RegisterModal';
+import { ResetPasswordModal } from '../../auth/ResetPasswordModal';
 
 export const Modal = () => {
   const { environment } = useContext(EnvironmentContext);
@@ -20,6 +21,9 @@ export const Modal = () => {
       {modalTypes.login === modalShow && <LoginModal email={email} setEmail={setEmail} />}
       {modalTypes.register === modalShow && (
         <RegisterModal email={email} setEmail={setEmail} />
+      )}
+      {modalTypes.resetPassword === modalShow && (
+        <ResetPasswordModal email={email} setEmail={setEmail} />
       )}
     </StyledModal>,
     document.getElementById('modal')

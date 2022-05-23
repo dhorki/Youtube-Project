@@ -1,13 +1,18 @@
 import React, { useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, registerWithEmailAndPassword, signInWithGoogle } from '../../firebase';
 import { MdClear } from 'react-icons/md';
 import { EnvironmentContext } from '../../contexts/EnvironmentContext';
-import { environmentActions, hideModalAction } from '../../constants/constants';
+import {
+  environmentActions,
+  hideModalAction,
+  modalTypes,
+} from '../../constants/constants';
 import { useForm } from '../../hooks/useForm';
 import { LoadingAnimation } from '../ui/loading/LoadingAnimation';
-import { StyledRegisterModal } from '../../styles/auth/RegisterModal';
+import { StyledAuthModal } from '../../styles/auth/AuthModal';
 
 export const RegisterModal = ({ email: sharedEmail, setEmail }) => {
   const { environment, dispatchEnv } = useContext(EnvironmentContext);
@@ -46,12 +51,12 @@ export const RegisterModal = ({ email: sharedEmail, setEmail }) => {
     signInWithGoogle();
   };
 
-  const handleSwitchToCreateAccount = (e) => {
+  const handleSwitchToLogin = (e) => {
     e.preventDefault();
     const action = {
       type: environmentActions.setModalShow,
       payload: {
-        modalShow: 'login',
+        modalShow: modalTypes.login,
       },
     };
 
@@ -72,7 +77,7 @@ export const RegisterModal = ({ email: sharedEmail, setEmail }) => {
       {loading ? (
         <LoadingAnimation theme={theme} />
       ) : (
-        <StyledRegisterModal
+        <StyledAuthModal
           theme={theme}
           className="animate__animated animate__flipInY animate__faster"
         >
@@ -127,12 +132,17 @@ export const RegisterModal = ({ email: sharedEmail, setEmail }) => {
                 </p>
               </div>
             </div>
-            <button className="link" onClick={handleSwitchToCreateAccount}>
-              Go to Login
+            <button className="link" onClick={handleSwitchToLogin}>
+              I already have an account
             </button>
           </form>
-        </StyledRegisterModal>
+        </StyledAuthModal>
       )}
     </>
   );
+};
+
+RegisterModal.propTypes = {
+  email: PropTypes.string,
+  setEmail: PropTypes.func,
 };

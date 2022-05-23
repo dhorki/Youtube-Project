@@ -62,6 +62,7 @@ export const environmentActions = {
 export const modalTypes = {
   login: 'login',
   register: 'register',
+  resetPassword: 'reset-password',
   none: 'none',
 };
 

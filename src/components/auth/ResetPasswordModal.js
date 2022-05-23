@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../../firebase';
+import { auth, sendPasswordReset, signInWithGoogle } from '../../firebase';
 import { MdClear } from 'react-icons/md';
 import { StyledAuthModal } from '../../styles/auth/AuthModal';
 import { EnvironmentContext } from '../../contexts/EnvironmentContext';
@@ -14,7 +14,7 @@ import {
 import { useForm } from '../../hooks/useForm';
 import { LoadingAnimation } from '../ui/loading/LoadingAnimation';
 
-export const LoginModal = ({ email: sharedEmail, setEmail }) => {
+export const ResetPasswordModal = ({ email: sharedEmail, setEmail }) => {
   const { environment, dispatchEnv } = useContext(EnvironmentContext);
   const { theme } = environment;
 
@@ -24,7 +24,7 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
   };
 
   const [formValues, handleInputChange] = useForm(formInitState);
-  const { email, password } = formValues;
+  const { email } = formValues;
 
   const history = useHistory();
   const [user, loading, error] = useAuthState(auth);
@@ -38,9 +38,9 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
     handleInputChange(e);
   };
 
-  const handleLogin = (e) => {
+  const handleReset = (e) => {
     e.preventDefault();
-    logInWithEmailAndPassword(email, password);
+    sendPasswordReset(email);
   };
 
   const handleGoogleLogin = () => {
@@ -53,18 +53,6 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
       type: environmentActions.setModalShow,
       payload: {
         modalShow: modalTypes.register,
-      },
-    };
-
-    dispatchEnv(action);
-  };
-
-  const handleSwitchToResetPassword = (e) => {
-    e.preventDefault();
-    const action = {
-      type: environmentActions.setModalShow,
-      payload: {
-        modalShow: modalTypes.resetPassword,
       },
     };
 
@@ -92,9 +80,9 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
           <div className="modal-close-row">
             <MdClear className="modal-close" onClick={handleClose} />
           </div>
-          <h3 className="modal-title">Login</h3>
+          <h3 className="modal-title">Reset Password</h3>
           {error && <p className="alert-error">{error.message}</p>}
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleReset}>
             <input
               className="modal-input"
               type="text"
@@ -104,36 +92,8 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
               value={email}
               onChange={handleEmailChange}
             />
-            <input
-              className="modal-input"
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={password}
-              onChange={handleInputChange}
-              autoComplete="off"
-            />
-            <button type="submit">Login</button>
-            <button className="link" onClick={handleSwitchToResetPassword}>
-              Reset Password
-            </button>
-            <div className="social-networks">
-              <div className="google-btn" onClick={handleGoogleLogin}>
-                <div className="google-icon-wrapper">
-                  <img
-                    className="google-icon"
-                    src={
-                      'https://upload.wikimedia.org/wikipedia/commons/5/53/' +
-                      'Google_%22G%22_Logo.svg'
-                    }
-                    alt="google button"
-                  />
-                </div>
-                <p className="btn-text">
-                  <b>Sign in with Google</b>
-                </p>
-              </div>
-            </div>
+            <button type="submit">Reset Password</button>
+            <hr />
             <button className="link" onClick={handleSwitchToCreateAccount}>
               Create new account
             </button>
@@ -144,7 +104,7 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
   );
 };
 
-LoginModal.propTypes = {
+ResetPasswordModal.propTypes = {
   email: PropTypes.string,
   setEmail: PropTypes.func,
 };
