@@ -14,5 +14,5 @@ export const StyledModal = styled.div`
   height: 100vh;
   width: 100vw;
   backdrop-filter: blur(5px);
-  z-index: 2;
+  z-index: 20;
 `;
