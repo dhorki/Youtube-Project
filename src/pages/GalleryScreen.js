@@ -16,6 +16,7 @@ export const GalleryScreen = () => {
 
   const galleryType =
     location.pathname === '/' ? mainViewTypes.searchGallery : mainViewTypes.videoGallery;
+
   const queryString = require('query-string');
   const { q = '' } = queryString.parse(location.search);
 

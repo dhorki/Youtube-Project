@@ -9,10 +9,10 @@ import { appReducer } from './reducers/appReducer';
 
 export const YoutubeApp = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
 
   const initUser = user
     ? {
+        uid: user.uid,
         name: user.displayName,
         email: user.email,
         photo: user.photoURL,
@@ -31,18 +31,20 @@ export const YoutubeApp = () => {
   useEffect(() => {
     const fetchUserName = async () => {
       try {
-        const q = query(collection(db, 'users'), where('uid', '==', user?.uid));
-        const doc = await getDocs(q);
-        const data = doc.docs[0].data();
+        const q = query(collection(db, 'users'), where('uid', '==', user.uid));
+        const docs = await getDocs(q);
+        const [doc] = docs.docs;
+        const data = doc.data();
 
         const action = {
           type: environmentActions.setUser,
           payload: {
             user: {
+              uid: user.uid,
               name: data.name,
               email: user.email,
               photo: user.photoURL,
-              favoritesList: user.favoritesList,
+              favoritesList: data.favoritesList,
             },
           },
         };
@@ -55,7 +57,7 @@ export const YoutubeApp = () => {
     };
 
     if (user) {
-      fetchUserName();
+      setTimeout(fetchUserName, 1000);
     }
   }, [user]);
 

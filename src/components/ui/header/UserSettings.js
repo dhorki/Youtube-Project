@@ -32,9 +32,7 @@ export const UserSettings = () => {
       },
     };
 
-    if (toLogin) {
-      console.log('login');
-    } else {
+    if (!toLogin) {
       const action = {
         type: environmentActions.setUser,
         payload: {
@@ -50,8 +48,6 @@ export const UserSettings = () => {
 
     dispatchEnv(action);
   };
-
-  const logged = false;
 
   return (
     <StyledUserSettings theme={theme} submenuShow={submenuShow}>
@@ -74,7 +70,7 @@ export const UserSettings = () => {
       <div className="submenu-container">
         <div className="submenu-item" onClick={() => handleLoginLogout(null === user)}>
           <div className="submenu-icon">
-            {logged ? <RiLogoutBoxFill /> : <RiLoginBoxFill />}
+            {user ? <RiLogoutBoxFill /> : <RiLoginBoxFill />}
           </div>
           <div className="submenu-label">{null === user ? 'Login' : 'Logout'}</div>
         </div>

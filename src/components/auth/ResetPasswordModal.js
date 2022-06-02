@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, sendPasswordReset, signInWithGoogle } from '../../firebase';
+import { auth, sendPasswordReset } from '../../firebase';
 import { MdClear } from 'react-icons/md';
 import { StyledAuthModal } from '../../styles/auth/AuthModal';
 import { EnvironmentContext } from '../../contexts/EnvironmentContext';
@@ -26,7 +25,6 @@ export const ResetPasswordModal = ({ email: sharedEmail, setEmail }) => {
   const [formValues, handleInputChange] = useForm(formInitState);
   const { email } = formValues;
 
-  const history = useHistory();
   const [user, loading, error] = useAuthState(auth);
 
   const handleClose = () => {
@@ -41,10 +39,6 @@ export const ResetPasswordModal = ({ email: sharedEmail, setEmail }) => {
   const handleReset = (e) => {
     e.preventDefault();
     sendPasswordReset(email);
-  };
-
-  const handleGoogleLogin = () => {
-    signInWithGoogle();
   };
 
   const handleSwitchToCreateAccount = (e) => {
@@ -62,9 +56,8 @@ export const ResetPasswordModal = ({ email: sharedEmail, setEmail }) => {
   useEffect(() => {
     if (user) {
       dispatchEnv(hideModalAction);
-      history.push('/');
     }
-  }, [user, history, dispatchEnv]);
+  }, [user, dispatchEnv]);
 
   console.log(error);
 

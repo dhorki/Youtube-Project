@@ -57,6 +57,7 @@ export const environmentActions = {
   setSearchQuery: 'setSearchQuery',
   setModalShow: 'setModalShow',
   setUser: 'setUser',
+  setFavorites: 'setFavoritesList',
 };
 
 export const modalTypes = {

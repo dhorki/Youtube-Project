@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../../firebase';
 import { MdClear } from 'react-icons/md';
@@ -26,7 +25,6 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
   const [formValues, handleInputChange] = useForm(formInitState);
   const { email, password } = formValues;
 
-  const history = useHistory();
   const [user, loading, error] = useAuthState(auth);
 
   const handleClose = () => {
@@ -74,11 +72,8 @@ export const LoginModal = ({ email: sharedEmail, setEmail }) => {
   useEffect(() => {
     if (user) {
       dispatchEnv(hideModalAction);
-      history.push('/');
     }
-  }, [user, history, dispatchEnv]);
-
-  console.log(error);
+  }, [user, dispatchEnv]);
 
   return (
     <>

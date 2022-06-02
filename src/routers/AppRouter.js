@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Router, Switch, Route /*, Redirect */ } from 'react-router-dom';
-import { AuthRouter } from './AuthRouter';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Header } from '../components/ui/header/Header';
 import { StyledContainer, StyledMain } from '../styles/pages/Common';
@@ -16,14 +15,11 @@ const history = createBrowserHistory();
 
 export const AppRouter = () => {
   const { environment } = useContext(EnvironmentContext);
-  const { theme, sidebarShow, modalShow } = environment;
+  const { theme, sidebarShow, modalShow, user } = environment;
 
   return (
     <Router history={history}>
       <div>
-        <Switch>
-          <Route path="/auth" component={AuthRouter} />
-        </Switch>
         <StyledContainer>
           <Header />
           <StyledMain>
@@ -32,9 +28,12 @@ export const AppRouter = () => {
               <div className="main-container">
                 <Switch>
                   <Route exact path="/" component={GalleryScreen} />
-                  <Route exact path="/favorites" component={GalleryScreen} />
+                  {user && <Route exact path="/favorites" component={GalleryScreen} />}
+                  {user && (
+                    <Route exact path="/favorites/:videoId" component={ViewVideoScreen} />
+                  )}
                   <Route exact path="/:videoId" component={ViewVideoScreen} />
-                  {/* <Redirect to="/auth/login" /> */}
+                  <Redirect to="/" />
                 </Switch>
               </div>
             </StyledMainView>

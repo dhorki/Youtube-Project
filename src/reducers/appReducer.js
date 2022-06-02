@@ -12,6 +12,8 @@ export const appReducer = (state, { type, payload }) => {
       return { ...state, modalShow: payload.modalShow };
     case environmentActions.setUser:
       return { ...state, user: payload.user };
+    case environmentActions.setFavoritesList:
+      return { ...state, favoritesList: payload.favoritesList };
     default:
       return state;
   }

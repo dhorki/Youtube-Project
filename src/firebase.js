@@ -15,6 +15,7 @@ import {
   collection,
   where,
   addDoc,
+  updateDoc,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -30,6 +31,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+const saveFavorites = async (uid, favorites) => {
+  const q = query(collection(db, 'users'), where('uid', '==', uid));
+  const docs = await getDocs(q);
+  const doc = docs.docs[0];
+  await updateDoc(doc.ref, {
+    favoritesList: favorites,
+  });
+};
+
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
   try {
@@ -43,7 +53,9 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         authProvider: 'google',
         email: user.email,
+        favoritesList: [],
       });
+      saveFavorites(user.uid, []);
     }
   } catch (err) {
     console.error(err);
@@ -70,6 +82,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       authProvider: 'local',
       email,
     });
+    saveFavorites(user.uid, []);
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -98,4 +111,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordReset,
   logout,
+  saveFavorites,
 };

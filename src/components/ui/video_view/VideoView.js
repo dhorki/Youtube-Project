@@ -19,7 +19,7 @@ import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 
 export const VideoView = ({ id }) => {
   const { environment } = useContext(EnvironmentContext);
-  const { theme } = environment;
+  const { theme, user } = environment;
 
   const { data, loading, error } = useFetchYoutubeVideos(
     process.env.REACT_APP_YOUTUBE_API_KEY,
@@ -80,7 +80,11 @@ export const VideoView = ({ id }) => {
           <hr />
           <div className="view-video-channel-favorite">
             <ChannelBadge id={snippet.channelId} />
-            <button>ADD TO FAVORITES</button>
+            {user && (
+              <button>
+                {user.favoritesList.includes(id) ? 'REMOVE FROM' : 'ADD TO'} FAVORITES
+              </button>
+            )}
           </div>
           <div className="view-video-description-box">
             <p

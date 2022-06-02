@@ -8,7 +8,7 @@ import { resetSearch } from '../../../helpers/resetSearch';
 
 export const Sidebar = () => {
   const { environment, dispatchEnv } = useContext(EnvironmentContext);
-  const { theme, sidebarShow } = environment;
+  const { theme, sidebarShow, user } = environment;
 
   return (
     <StyledSidebar theme={theme} toggle={sidebarShow}>
@@ -22,15 +22,19 @@ export const Sidebar = () => {
         <AiFillHome className="sidebar-link-icon" />
         <span>Home</span>
       </NavLink>
-      <NavLink
-        id="sidebar-favorites-link"
-        className={(isActive) => `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`}
-        to="/favorites"
-        onClick={() => resetSearch(dispatchEnv)}
-      >
-        <MdFavorite className="sidebar-link-icon" />
-        <span>Favorites</span>
-      </NavLink>
+      {user && (
+        <NavLink
+          id="sidebar-favorites-link"
+          className={(isActive) =>
+            `sidebar-link ${isActive ? 'sidebar-link-active' : ''}`
+          }
+          to="/favorites"
+          onClick={() => resetSearch(dispatchEnv)}
+        >
+          <MdFavorite className="sidebar-link-icon" />
+          <span>Favorites</span>
+        </NavLink>
+      )}
     </StyledSidebar>
   );
 };
