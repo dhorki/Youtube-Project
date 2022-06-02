@@ -14,6 +14,7 @@ export const StyledVideoView = styled.div`
 
   .embedded-video {
     width: 100%;
+    min-width: ${screenSizes.xsmall};
     min-height: calc(480px * 9 / 16);
     height: calc(${videoArea} * 9 / 16);
 
@@ -69,6 +70,7 @@ export const StyledVideoView = styled.div`
     > .view-video-description {
       color: ${({ theme }) => theme.secondary};
       overflow: hidden;
+      min-height: 100px;
       height: 100%;
     }
 
@@ -112,6 +114,11 @@ export const StyledVideoView = styled.div`
       border-radius: 5px;
       border: none;
       cursor: pointer;
+
+      &.remove {
+        color: ${styles.colors.dark.primary};
+        background-color: ${styles.colors.light.googleBlue};
+      }
     }
   }
 `;

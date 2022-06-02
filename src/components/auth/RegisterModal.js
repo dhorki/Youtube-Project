@@ -67,8 +67,6 @@ export const RegisterModal = ({ email: sharedEmail, setEmail }) => {
     }
   }, [user, dispatchEnv]);
 
-  console.log(error);
-
   return (
     <>
       {loading ? (

@@ -40,6 +40,15 @@ const saveFavorites = async (uid, favorites) => {
   });
 };
 
+const saveDarkMode = async (uid, darkMode) => {
+  const q = query(collection(db, 'users'), where('uid', '==', uid));
+  const docs = await getDocs(q);
+  const doc = docs.docs[0];
+  await updateDoc(doc.ref, {
+    darkMode: darkMode,
+  });
+};
+
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
   try {
@@ -54,6 +63,7 @@ const signInWithGoogle = async () => {
         authProvider: 'google',
         email: user.email,
         favoritesList: [],
+        darkMode: false,
       });
       saveFavorites(user.uid, []);
     }
@@ -112,4 +122,5 @@ export {
   sendPasswordReset,
   logout,
   saveFavorites,
+  saveDarkMode,
 };

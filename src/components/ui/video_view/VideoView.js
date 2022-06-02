@@ -16,10 +16,13 @@ import { LoadingAnimation } from '../loading/LoadingAnimation';
 import { ChannelBadge } from './ChannelBadge';
 import { ErrorText } from '../error/ErrorText';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
+import { updateFavoritesList } from '../../../helpers/updateFavoritesList';
 
 export const VideoView = ({ id }) => {
-  const { environment } = useContext(EnvironmentContext);
+  const { environment, dispatchEnv } = useContext(EnvironmentContext);
   const { theme, user } = environment;
+
+  const isFavorite = user?.favoritesList.includes(id);
 
   const { data, loading, error } = useFetchYoutubeVideos(
     process.env.REACT_APP_YOUTUBE_API_KEY,
@@ -31,7 +34,6 @@ export const VideoView = ({ id }) => {
   const iframeAllow =
     'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
 
-  // const { items } = require('../../../mocks/youtube-video-mock.json');
   let snippet, contentDetails, statistics;
   if (!loading && !error) {
     const item = data?.items[0];
@@ -39,6 +41,10 @@ export const VideoView = ({ id }) => {
     contentDetails = item.contentDetails;
     statistics = item.statistics;
   }
+
+  const handleChangeFavorites = () => {
+    updateFavoritesList(user, id, dispatchEnv);
+  };
 
   return (
     <StyledVideoView className="animate__animated animate__fadeIn" theme={theme}>
@@ -81,8 +87,11 @@ export const VideoView = ({ id }) => {
           <div className="view-video-channel-favorite">
             <ChannelBadge id={snippet.channelId} />
             {user && (
-              <button>
-                {user.favoritesList.includes(id) ? 'REMOVE FROM' : 'ADD TO'} FAVORITES
+              <button
+                className={isFavorite ? 'remove' : ''}
+                onClick={handleChangeFavorites}
+              >
+                {isFavorite ? 'REMOVE FROM' : 'ADD TO'} FAVORITES
               </button>
             )}
           </div>

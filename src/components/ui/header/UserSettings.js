@@ -4,7 +4,7 @@ import { SliderButton } from './SliderButton';
 import { EnvironmentContext } from '../../../contexts/EnvironmentContext';
 import { environmentActions, modalTypes, styles } from '../../../constants/constants';
 import { StyledUserSettings } from '../../../styles/components/ui/header/UserSettings';
-import { logout } from '../../../firebase';
+import { logout, saveDarkMode } from '../../../firebase';
 
 export const UserSettings = () => {
   const { environment, dispatchEnv } = useContext(EnvironmentContext);
@@ -13,6 +13,10 @@ export const UserSettings = () => {
   const [submenuShow, setsubmenuShow] = useState(false);
 
   const handleThemeChange = (checked) => {
+    if (user) {
+      saveDarkMode(user.uid, checked);
+    }
+
     const action = {
       type: environmentActions.setTheme,
       payload: {

@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   min-width: 560px;
-  z-index: 1;
+  z-index: 10;
 
   transition: background-color ${styles.props.transitionTime} ease;
 

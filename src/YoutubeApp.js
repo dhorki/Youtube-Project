@@ -17,6 +17,7 @@ export const YoutubeApp = () => {
         email: user.email,
         photo: user.photoURL,
         favoritesList: [],
+        darkMode: false,
       }
     : null;
 
@@ -29,7 +30,7 @@ export const YoutubeApp = () => {
   };
 
   useEffect(() => {
-    const fetchUserName = async () => {
+    const fetchUserAdditionalInfo = async () => {
       try {
         const q = query(collection(db, 'users'), where('uid', '==', user.uid));
         const docs = await getDocs(q);
@@ -50,6 +51,15 @@ export const YoutubeApp = () => {
         };
 
         dispatchEnv(action);
+
+        const themeAction = {
+          type: environmentActions.setTheme,
+          payload: {
+            theme: data.darkMode ? styles.colors.dark : styles.colors.light,
+          },
+        };
+
+        dispatchEnv(themeAction);
       } catch (err) {
         console.error(err);
         alert('An error occured while fetching user data');
@@ -57,7 +67,7 @@ export const YoutubeApp = () => {
     };
 
     if (user) {
-      setTimeout(fetchUserName, 1000);
+      setTimeout(fetchUserAdditionalInfo, 1000);
     }
   }, [user]);
 

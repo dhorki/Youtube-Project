@@ -7,6 +7,7 @@ export const StyledRelatedVideoList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  height: 100%;
   width: 390px;
 
   @media only screen and (max-width: ${screenSizes.mid}) {

@@ -7,40 +7,38 @@ import { EnvironmentContext } from '../contexts/EnvironmentContext';
 import { useFetch } from '../hooks/useFetch';
 import { StyledViewVideoScreen } from '../styles/pages/ViewVideoScreen';
 
-export const ViewVideoScreen = () => {
+export const ViewFavoritesVideoScreen = () => {
   const { environment } = useContext(EnvironmentContext);
   const { user } = environment;
 
   const { videoId } = useParams();
 
-  const url =
-    'https://www.googleapis.com/youtube/v3/search?' +
+  const favoritesUrl =
+    'https://www.googleapis.com/youtube/v3/videos?' +
     `key=${process.env.REACT_APP_YOUTUBE_API_KEY}&` +
-    'part=snippet&' +
-    'type=video&' +
-    'order=relevance&' +
-    `relatedToVideoId=${videoId}&` +
+    'part=id,snippet&' +
+    'id=' +
+    user?.favoritesList.join(',') +
+    '&' +
     'maxResults=24';
 
-  const { data, loading, error } = useFetch(url);
+  const { data, loading, error } = useFetch(favoritesUrl, false);
 
   let filteredItems = [];
 
   if (!loading && !error) {
-    filteredItems = data.items?.filter(
-      (item) => item.id.kind.includes('youtube#video') && item.snippet
-    );
+    filteredItems = data.items?.filter((item) => item.kind.includes('youtube#video'));
   }
 
   return (
     <StyledViewVideoScreen>
-      {!user && videoId === 'favorites' ? (
+      {!user ? (
         <Redirect to="/" />
       ) : (
         <>
           <VideoView id={videoId} />
           <RelatedVideoList
-            title={'Related Videos'}
+            title={'Favorites Videos'}
             videos={filteredItems}
             loading={loading}
             error={error}

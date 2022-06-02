@@ -8,12 +8,10 @@ export const SliderButton = ({ label, initState, callback }) => {
   const { theme } = environment;
 
   const [hover, setHover] = useState(false);
-  const [checked, setChecked] = useState(initState);
 
   const handleToggle = () => {
-    setChecked(!checked);
     if (callback) {
-      callback(!checked);
+      callback(!initState);
     }
   };
 
@@ -27,7 +25,7 @@ export const SliderButton = ({ label, initState, callback }) => {
       }}
       onClick={handleToggle}
       hover={hover}
-      checked={checked}
+      checked={initState}
       theme={theme}
     >
       <div className="slider-background">

@@ -10,6 +10,8 @@ import { GalleryScreen } from '../pages/GalleryScreen';
 import { ViewVideoScreen } from '../pages/ViewVideoScreen';
 import { modalTypes } from '../constants/constants';
 import { Modal } from '../components/ui/modal/Modal';
+import { FavoritesGalleryScreen } from '../pages/FavoritesGalleryScreen';
+import { ViewFavoritesVideoScreen } from '../pages/ViewFavoritesVideoScreen';
 
 const history = createBrowserHistory();
 
@@ -28,9 +30,15 @@ export const AppRouter = () => {
               <div className="main-container">
                 <Switch>
                   <Route exact path="/" component={GalleryScreen} />
-                  {user && <Route exact path="/favorites" component={GalleryScreen} />}
                   {user && (
-                    <Route exact path="/favorites/:videoId" component={ViewVideoScreen} />
+                    <Route exact path="/favorites" component={FavoritesGalleryScreen} />
+                  )}
+                  {user && (
+                    <Route
+                      exact
+                      path="/favorites/:videoId"
+                      component={ViewFavoritesVideoScreen}
+                    />
                   )}
                   <Route exact path="/:videoId" component={ViewVideoScreen} />
                   <Redirect to="/" />

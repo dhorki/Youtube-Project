@@ -13,7 +13,8 @@ export const appReducer = (state, { type, payload }) => {
     case environmentActions.setUser:
       return { ...state, user: payload.user };
     case environmentActions.setFavoritesList:
-      return { ...state, favoritesList: payload.favoritesList };
+      const user = { ...state.user, favoritesList: payload.favoritesList };
+      return { ...state, user: user };
     default:
       return state;
   }

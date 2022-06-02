@@ -1,41 +1,77 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { styles } from '../../../../constants/constants';
 
-export const StyledRelatedVideoCard = styled(Link)`
-  display: flex;
-  flex-direction: row;
-  width: 360px;
+export const StyledRelatedVideoCard = styled.div`
+  > .favorite-container {
+    position: relative;
+    height: 0;
+    width: 0;
 
-  margin-left: 5px;
-  margin-bottom: 10px;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.primary};
-  text-decoration: none;
+    > button {
+      width: 30px;
+      position: absolute;
+      left: 135px;
+      top: 65px;
+      background-color: transparent;
+      border: 0px;
+      color: ${styles.colors.light.white};
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1;
 
-  transition: background-color ${styles.props.transitionTime} ease;
+      filter: drop-shadow(0px 0px 1px black);
 
-  > img {
-    width: 168px;
-    height: 94px;
+      &:hover {
+        font-size: 28px;
+        filter: brightness(80%);
+      }
+
+      &.remove {
+        color: ${styles.colors.light.appIcon};
+      }
+    }
   }
 
-  > div {
+  > a {
     display: flex;
-    flex-direction: column;
-    width: 226px;
-    margin-left: 10px;
+    flex-direction: row;
+    width: 360px;
 
-    > .videocard-title {
-      color: ${({ theme }) => theme.primary};
-      font-size: 14px;
-      font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.primary};
+    text-decoration: none;
+
+    transition: background-color ${styles.props.transitionTime} ease;
+
+    &.current {
+      background-color: ${({ theme }) => theme.linkHoverBackground};
     }
 
-    > .videocard-channel-title {
-      margin-top: 10px;
-      color: ${({ theme }) => theme.secondary};
-      font-size: 14px;
+    > img {
+      width: 168px;
+      height: 94px;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      width: 226px;
+      margin-left: 10px;
+
+      > .videocard-title {
+        color: ${({ theme }) => theme.primary};
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      > .videocard-channel-title {
+        margin-top: 10px;
+        color: ${({ theme }) => theme.secondary};
+        font-size: 14px;
+      }
     }
   }
 `;
